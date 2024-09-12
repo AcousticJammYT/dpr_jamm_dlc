@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="52" height="25" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#4b54bc" nextlayerid="7" nextobjectid="43">
+ <editorsettings>
+  <export target="data.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="music" value="weller"/>
+  <property name="name" value="Sally O' The Sea"/>
+ </properties>
+ <tileset firstgid="1" source="../../../../tilesets/ship.tsx"/>
+ <objectgroup id="6" name="objects_bg"/>
+ <layer id="1" name="Tile Layer 1" width="52" height="25">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <imagelayer id="2" name="Image Layer 1" offsetx="0" offsety="200">
+  <image source="../../../../../../assets/sprites/world/maps/ship/ship.png" width="2000" height="808"/>
+ </imagelayer>
+ <objectgroup id="3" name="collision">
+  <object id="7" x="908" y="594" width="36" height="28"/>
+  <object id="8" x="1182" y="594" width="36" height="28"/>
+  <object id="9" x="1570" y="418" width="32" height="38"/>
+  <object id="10" x="1900" y="252">
+   <polygon points="0,0 -431.957,-0.0869565 -636.455,204 -709.909,204 -1001.82,204.182 -1213.67,212.333 -1345.67,232.667 -1401.5,254 -1435.5,275.25 -1535.75,358 -1426.36,448 -1365.75,476.25 -1300,491.818 -1213.82,502.182 -1002.25,509.75 -1002.25,511.875 -349.875,511.938 -379.875,388 -380,268 -397.75,215.875 -397.875,310 -406.625,271.875 -609.75,271.75 -612,230.125 -603.957,230.043 -406,32 -402,34.0444 -401.978,44 -321.909,379.545 86.0625,379.938 -3.125,-12.25 180,-12 180,748 -1900,748 -1900,-452 180,-452 180,-12 -18.6667,-26"/>
+  </object>
+  <object id="11" x="1880" y="212" width="200" height="40"/>
+  <object id="12" x="1146" y="456" width="44" height="30"/>
+  <object id="13" x="1074" y="456" width="44" height="30"/>
+  <object id="14" x="1002" y="456" width="44" height="30"/>
+  <object id="15" x="930" y="456" width="44" height="30"/>
+  <object id="16" x="1588" y="252" width="44" height="30"/>
+  <object id="17" x="1684" y="252" width="44" height="30"/>
+  <object id="18" x="1780" y="252" width="44" height="30"/>
+  <object id="19" x="1886" y="624" width="44" height="30"/>
+  <object id="20" x="1802" y="624" width="44" height="30"/>
+  <object id="21" x="1718" y="624" width="44" height="30"/>
+  <object id="22" x="990" y="730" width="44" height="34"/>
+  <object id="23" x="1062" y="730" width="44" height="34"/>
+  <object id="24" x="1136" y="730" width="44" height="34"/>
+  <object id="25" x="1208" y="730" width="44" height="34"/>
+ </objectgroup>
+ <objectgroup id="4" name="markers">
+  <object id="30" name="captain" x="1476" y="600">
+   <point/>
+  </object>
+  <object id="33" name="spawn" x="1400" y="570">
+   <point/>
+  </object>
+  <object id="36" name="follower1_spawn_1" x="1640" y="440">
+   <point/>
+  </object>
+  <object id="37" name="follower2_spawn_1" x="1802" y="300">
+   <point/>
+  </object>
+  <object id="38" name="follower3_spawn_1" x="1360" y="740">
+   <point/>
+  </object>
+  <object id="39" name="marcy_start" x="1040" y="498">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="5" name="objects">
+  <object id="4" gid="1" x="1102" y="622" width="214" height="586"/>
+  <object id="5" gid="1" x="828" y="622" width="214" height="586"/>
+  <object id="6" gid="2" x="1566" y="458" width="48" height="84"/>
+  <object id="29" name="script" x="1502" y="560" width="40" height="80">
+   <properties>
+    <property name="cutscene" value="marcyquest.deckdoor"/>
+    <property name="once" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="31" name="savepoint" x="1400" y="534">
+   <properties>
+    <property name="flagcheck" value="!marcy_with_party"/>
+    <property name="override_power" type="bool" value="true"/>
+    <property name="text1" value="* Marcy is filled with the excitement of new adventure."/>
+    <property name="text2" value="[facec:marcy/happy][voice:marcy]* You know it!"/>
+    <property name="text3" value="* The power of the seven seas shines within her."/>
+   </properties>
+   <point/>
+  </object>
+  <object id="35" name="savepoint" x="1400" y="534">
+   <properties>
+    <property name="flagcheck" value="marcy_with_party"/>
+    <property name="text1" value="* The power of the seven seas shines within you."/>
+   </properties>
+   <point/>
+  </object>
+  <object id="41" name="NPC" x="1082" y="498">
+   <properties>
+    <property name="actor" value="jamm"/>
+    <property name="flagcheck" value="!marcyquest_started"/>
+    <property name="sprite" value="talk_to_marcy"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="42" name="NPC" x="400" y="610">
+   <properties>
+    <property name="actor" value="darkbeard"/>
+    <property name="cutscene" value="marcyquest.captain_talk_1"/>
+    <property name="facing" value="left"/>
+    <property name="flagcheck" value="!marcyquest_party_1"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>
