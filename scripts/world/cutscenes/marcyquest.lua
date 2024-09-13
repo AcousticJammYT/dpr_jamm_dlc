@@ -425,6 +425,11 @@ return {
 		end
 	end,
 	
+	stone_sign_3 = function(cutscene, event)
+		cutscene:text("* Adventurer,[wait:5] I carved some climbing holes in the side of this cliff here.")
+		cutscene:text("* Whenever you see this pattern,[wait:5] you can climb up the wall it's on.")
+	end,
+	
 	special_key = function(cutscene, event)
 		if not Game:getFlag("marcyquest_party_key") then
 			cutscene:text("* The path is shut.[wait:10]\n* On the door is a skull-shaped hole.")

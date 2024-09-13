@@ -388,7 +388,6 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["facing"] = "down",
             ["map"] = "marcyquest/stone_island/si_2",
             ["marker"] = "entry"
           }

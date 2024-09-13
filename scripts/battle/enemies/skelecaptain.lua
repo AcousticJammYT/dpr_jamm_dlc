@@ -15,9 +15,7 @@ function Pirate:init()
     self.spare_points = 20
 
     self.waves = {
-        "basic",
-        "aiming",
-        "movingarena"
+        "steering_turn"
     }
 
     self.dialogue = {

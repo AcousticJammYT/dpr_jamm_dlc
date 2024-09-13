@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 35,
+  nextobjectid = 37,
   backgroundcolor = { 75, 84, 188 },
   properties = {},
   tilesets = {
@@ -491,6 +491,19 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 35,
+          name = "si_3",
+          type = "",
+          shape = "point",
+          x = 40,
+          y = 500,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -631,7 +644,6 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["facing"] = "down",
             ["map"] = "marcyquest/stone_island/entry",
             ["marker"] = "si2"
           }
@@ -679,6 +691,22 @@ return {
           visible = true,
           properties = {
             ["cutscene"] = "marcyquest.postslide"
+          }
+        },
+        {
+          id = 36,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = -40,
+          y = 440,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "marcyquest/stone_island/si_3",
+            ["marker"] = "si_2"
           }
         }
       }

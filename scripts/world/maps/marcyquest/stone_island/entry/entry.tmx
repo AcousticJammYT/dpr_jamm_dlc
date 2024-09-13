@@ -122,7 +122,6 @@
   </object>
   <object id="12" name="transition" x="280" y="640" width="80" height="40">
    <properties>
-    <property name="facing" value="down"/>
     <property name="map" value="marcyquest/stone_island/si_2"/>
     <property name="marker" value="entry"/>
    </properties>
