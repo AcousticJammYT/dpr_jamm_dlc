@@ -10,9 +10,11 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 23,
+  nextobjectid = 25,
   backgroundcolor = { 75, 84, 188 },
-  properties = {},
+  properties = {
+    ["music"] = "shadow"
+  },
   tilesets = {
     {
       name = "rock_island",
@@ -324,6 +326,19 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 24,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 200,
+          y = 80,
+          width = 120,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -466,6 +481,19 @@ return {
           type = "",
           shape = "rectangle",
           x = 680,
+          y = 280,
+          width = 40,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 23,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 800,
           y = 280,
           width = 40,
           height = 0,

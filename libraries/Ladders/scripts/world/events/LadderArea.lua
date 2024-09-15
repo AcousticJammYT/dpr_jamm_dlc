@@ -14,6 +14,9 @@ function LadderArea:onEnter(chara)
 	elseif Assets.getTexture(chara.actor.path .. "/" .. chara.actor.default .. "/up") ~= nil or Assets.getTexture(chara.actor.path .. "/" .. chara.actor.default .. "/up_1") ~= nil then
 		chara.sprite:setWalkSprite("walk/up")
 	end
+	if chara.actor.id == Game.party[1].actor.id then
+		Game.world.player.disable_running = true
+	end
 end
 
 function LadderArea:onExit(chara)
@@ -25,6 +28,9 @@ function LadderArea:onExit(chara)
 	end
 	if precol == false then
 		chara.sprite:resetSprite()
+		if chara.actor.id == Game.party[1].actor.id then
+			Game.world.player.disable_running = false
+		end
 	end
 	self.inside[chara] = false
 end

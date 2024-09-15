@@ -10,9 +10,11 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 9,
-  nextobjectid = 15,
+  nextobjectid = 16,
   backgroundcolor = { 75, 84, 188 },
-  properties = {},
+  properties = {
+    ["music"] = "shadow"
+  },
   tilesets = {
     {
       name = "rock_island",
@@ -405,6 +407,21 @@ return {
           visible = true,
           properties = {
             ["cutscene"] = "marcyquest.stone_sign_1"
+          }
+        },
+        {
+          id = 15,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 200,
+          y = 120,
+          width = 294,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "marcyquest.captain_command"
           }
         }
       }

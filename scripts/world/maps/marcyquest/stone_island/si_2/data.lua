@@ -12,7 +12,9 @@ return {
   nextlayerid = 11,
   nextobjectid = 37,
   backgroundcolor = { 75, 84, 188 },
-  properties = {},
+  properties = {
+    ["music"] = "shadow"
+  },
   tilesets = {
     {
       name = "rock_island",

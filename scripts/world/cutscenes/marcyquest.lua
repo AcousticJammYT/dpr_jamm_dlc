@@ -363,6 +363,14 @@ return {
 		end
 	end,
 	
+    captain_command = function(cutscene, event)
+		cutscene:showNametag("Cpt. Darkbeard")
+		cutscene:text("* Keep up the effort, laddies!", "neutral", "darkbeard")
+		cutscene:text("* 'Er else, ye'll be forced to walk the plank!", "neutral", "darkbeard")
+		cutscene:hideNametag()
+		cutscene:text("* Sounds like Captain Darkbeard is working everyone hard.")
+	end,
+	
 	setbackground = function(cutscene, event)
 		Game.world.player:setLayer(Game.world.map.layers["other_objects"])
 		for k,v in pairs(Game.world.followers) do

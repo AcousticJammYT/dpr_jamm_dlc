@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#4b54bc" nextlayerid="9" nextobjectid="15">
+<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#4b54bc" nextlayerid="9" nextobjectid="16">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="music" value="shadow"/>
+ </properties>
  <tileset firstgid="1" source="../../../../tilesets/rock_island.tsx"/>
  <imagelayer id="3" name="Image Layer 1" offsetx="-1084" offsety="-402">
   <image source="../../../../../../assets/sprites/world/maps/ship/ship.png" width="2000" height="808"/>
@@ -129,6 +132,11 @@
   <object id="14" name="interactable" x="120" y="240" width="40" height="80">
    <properties>
     <property name="cutscene" value="marcyquest.stone_sign_1"/>
+   </properties>
+  </object>
+  <object id="15" name="interactable" x="200" y="120" width="294" height="80">
+   <properties>
+    <property name="cutscene" value="marcyquest.captain_command"/>
    </properties>
   </object>
  </objectgroup>

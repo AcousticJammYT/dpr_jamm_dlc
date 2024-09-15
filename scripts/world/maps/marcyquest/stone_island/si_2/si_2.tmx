@@ -3,6 +3,9 @@
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="music" value="shadow"/>
+ </properties>
  <tileset firstgid="1" source="../../../../tilesets/rock_island.tsx"/>
  <layer id="9" name="Tile Layer 5" width="26" height="23">
   <data encoding="csv">
