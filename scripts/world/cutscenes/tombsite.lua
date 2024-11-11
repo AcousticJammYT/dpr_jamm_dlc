@@ -62,6 +62,8 @@ return {
 		end
 		cutscene:hideNametag()
 		
+		Game:setFlag("acj_quest_prog", 1)
+		-- Game:getQuest("acj_quest"):unlock()
 		-- Kristal.callEvent("setDesc", "acj", "You found AcousticJamm in the forest. However, something seems off about him. Not only that, but the forest seems different than when you entered. Try to find your way out!")
 	end,
 	transition_1 = function(cutscene, event)
@@ -418,7 +420,7 @@ return {
 			cutscene:text("* I don't accept your apology but thank you anyway lego man.", "bruh", "noel")
 		end
 		
-		if #Game.party >= Game:getFlag("party_max") then
+		if #Game.party >= 3 then
 			cutscene:showNametag("Jamm")
 			cutscene:text("* I'd join you guys, but it looks like you have a full party.", "neutral", "jamm")
 			cutscene:text("* I'll see you later then.\n* Let me think for now.", "neutral", "jamm")
@@ -441,6 +443,8 @@ return {
 			cutscene:wait(0.5)
 		end
 		Game:setFlag("jamm_inparty", true)
+		
+		Game:setFlag("acj_quest_prog", 2)
 		-- Mod:unlockPartyMember("jamm")
 		-- Kristal.callEvent("completeQuest", "acj")
 		-- Kristal.callEvent("setDesc", "acj", "You found AcousticJamm (for real this time) during your battle against Enzio. Now, AcousticJamm is on your side! However, with Enzio, this may only be the start...")

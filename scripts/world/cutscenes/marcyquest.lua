@@ -330,9 +330,9 @@ return {
 	bunkbed_4 = function(cutscene, event)
 		local partystring = "nobody is"
 		if #Game:getFlag("pirate_party_flag", {}) == 1 then
-			partystring = Game:getPartyMember(Game:setFlag("pirate_party_flag")[1]).name .. " is"
+			partystring = Game:getPartyMember(Game:getFlag("pirate_party_flag")[1]).name .. " is"
 		elseif #Game:getFlag("pirate_party_flag", {}) >= 2 then
-			partystring = Game:getPartyMember(Game:setFlag("pirate_party_flag")[1]).name .. " and " .. Game:getPartyMember(Game:setFlag("pirate_party_flag")[2]).name .. " are"
+			partystring = Game:getPartyMember(Game:getFlag("pirate_party_flag")[1]).name .. " and " .. Game:getPartyMember(Game:getFlag("pirate_party_flag")[2]).name .. " are"
 		end
 		cutscene:text("* It's the bunk bed that " .. partystring .. " using.")
 		cutscene:text("* The top bunk's mattress has a small tear in it.")
