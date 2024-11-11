@@ -4,7 +4,9 @@
     // Displays on the main menu.
     "name": "Jamm's DLC",
     // Displays underneath the name. Optional.
-    "subtitle": "",
+    "subtitle": "A DLC of multiple stories. Includes the following:\n* The Forgotten Wood\n* The Emerald Sea",
+	
+	"creator": "AcousticJamm",
 
     // The version of your mod.
     "version": "v1.0.0",
