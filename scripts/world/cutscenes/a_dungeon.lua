@@ -549,10 +549,10 @@ return {
 				gonerText("UNFORTUNATELY,\nYOU DID NOT\nPASS THIS TRIAL.")
 			end
 			
-			if correct > 7 then
+			if correct > 7 and Game:getFlag("dungeonkiller") then
 				Assets.playSound("ominous_cancel")
 				Game:setFlag("dungeonkiller", false)
-			elseif correct == 7 then
+			elseif correct == 7 and Game:getFlag("dungeonkiller") then
 				Assets.playSound("ominous")
 			end
 			
@@ -890,15 +890,23 @@ return {
 				gonerText("YOU FINISHED THE\nOBSERVATION TRIAL!")
 				gonerText("YOUR [color:purple]KEY[color:white] AWAITS.")
 				Game:setFlag("acj_observation_win", true)
+				if not Game:getFlag("dungeonkiller") then
+					gonerText("HOWEVER, ONE\nMORE QUESTION,\nIF I MAY.")
+					gonerText("ARE THE CELL\nDOORS IN THE\nBASEMENT OPEN?")
+					cutscene:choicer({"No", "Yes"})
+					gonerText("ARE YOU SURE\nOF YOUR ANSWER?")
+					gonerText("YOU MAY WANT\nTO GO BACK\nAND CHECK.")
+					Game:setFlag("acj_secret_revealed", true)
+				end
 			else
 				gonerText(correct .. " OUT OF 5.")
 				gonerText("UNFORTUNATELY,\nYOU DID NOT\nPASS THIS TRIAL.")
 			end
 			
-			if correct > 3 then
+			if correct > 3 and Game:getFlag("dungeonkiller") then
 				Assets.playSound("ominous_cancel")
 				Game:setFlag("dungeonkiller", false)
-			elseif correct == 3 then
+			elseif correct == 3 and Game:getFlag("dungeonkiller") then
 				Assets.playSound("ominous")
 			end
 			
@@ -1163,9 +1171,9 @@ return {
 			end
 			Game.world.music:play("forgotten_wood")
 			cutscene:showNametag("Dess")
-			cutscene:text("* So, uh...\n* That was...", "eyebrow", "dess")
+			cutscene:text("* So, uh...[wait:10]\n* That was...", "eyebrow", "dess")
 			cutscene:showNametag("Jamm")
-			cutscene:text("* It was something, alright...", "nervous", "jamm")
+			cutscene:text("* It was something,[wait:5] alright...", "nervous", "jamm")
 			cutscene:text("* Who would've thought Ania made a shade of herself?", "nervous", "jamm")
 			cutscene:text("* Though... It was different...", "nervous_left", "jamm")
 			cutscene:look(dess, "left")
@@ -1180,16 +1188,16 @@ return {
 			cutscene:text("* Did you and your wife argue a lot?", "wtf_b", "dess")
 			cutscene:look(jamm, "down")
 			cutscene:showNametag("Jamm")
-			cutscene:text("* I mean, we had our ups and downs, sure...", "nervous", "jamm")
+			cutscene:text("* I mean,[wait:5] we had our ups and downs,[wait:5] sure...", "nervous", "jamm")
 			cutscene:look(jamm, "right")
 			cutscene:text("* But I wouldn't say we argued a LOT.", "neutral", "jamm")
 			cutscene:showNametag("Dess")
 			cutscene:text("* And what about Mini-Jamm?", "neutral", "dess")
 			cutscene:showNametag("Jamm")
-			cutscene:text("* She doesn't like that nickname, you know.", "stern", "jamm")
-			cutscene:text("* And Marcy was happy with us, as far as we could tell.", "side_smile", "jamm")
+			cutscene:text("* She doesn't like that nickname,[wait:5] you know.", "stern", "jamm")
+			cutscene:text("* And Marcy was happy with us,[wait:5] as far as we could tell.", "side_smile", "jamm")
 			cutscene:look(jamm, "down")
-			cutscene:text("* Wait, is this...?", "neutral", "jamm")
+			cutscene:text("* Wait,[wait:5] is this...?", "neutral", "jamm")
 			cutscene:hideNametag()
 			cutscene:wait(cutscene:walkToSpeed("jamm", "jamm_walkto", 4, "right"))
 			cutscene:look(dess, "down")
@@ -1200,7 +1208,7 @@ return {
 			cutscene:text("* Fuckin' NERD", "condescending", "dess")
 			cutscene:showNametag("Jamm")
 			cutscene:text("* Shut up and help me light this thing.", "stern", "jamm")
-			cutscene:text("* It's pretty chilly out here, Dess.", "ouch", "jamm")
+			cutscene:text("* It's pretty chilly out here,[wait:5] Dess.", "ouch", "jamm")
 			cutscene:showNametag("Dess")
 			cutscene:text("* kay", "condescending", "dess")
 			cutscene:hideNametag()
@@ -1213,26 +1221,26 @@ return {
 			cutscene:showNametag("Dess")
 			cutscene:text("* it's not even cold out here lmao", "condescending", "dess")
 			cutscene:showNametag("Jamm")
-			cutscene:text("* Not like you'd be able to tell, Dess.", "stern", "jamm")
+			cutscene:text("* Not like you'd be able to tell,[wait:5] Dess.", "stern", "jamm")
 			cutscene:showNametag("Dess")
 			cutscene:text("* lol fair", "wink", "dess")
 			cutscene:showNametag("Jamm")
 			cutscene:text("* ...", "stern", "jamm")
 			cutscene:text("* ...Hey.", "worried", "jamm")
 			cutscene:text("* Thanks for helping me get through that place.", "worried", "jamm")
-			cutscene:text("* I know you didn't really do much, but...", "worried", "jamm")
-			cutscene:text("* Well, you counted when I needed it.", "side_smile", "jamm")
+			cutscene:text("* I know you didn't really do much,[wait:5] but...", "worried", "jamm")
+			cutscene:text("* Well,[wait:5] you counted when I needed it.", "side_smile", "jamm")
 			cutscene:showNametag("Dess")
 			cutscene:text("* you did return the favor lol", "wink", "dess")
-			cutscene:text("* Seriously, without you, Shade Ania would've...", "neutral_c", "dess")
+			cutscene:text("* Seriously,[wait:5] without you,[wait:5] Shade Ania would've...", "neutral_c", "dess")
 			cutscene:showNametag("Jamm")
 			cutscene:text("* ...", "shaded", "jamm")
-			cutscene:text("* Let's not think about that, alright?", "worried", "jamm")
-			cutscene:text("* We're alive, and that's what counts.", "neutral", "jamm")
-			cutscene:text("* You know what though, Dess?", "neutral", "jamm")
+			cutscene:text("* Let's not think about that,[wait:5] alright?", "worried", "jamm")
+			cutscene:text("* We're alive,[wait:5] and that's what counts.", "neutral", "jamm")
+			cutscene:text("* You know what though,[wait:5] Dess?", "neutral", "jamm")
 			cutscene:text("* The fact that Ania made this dungeon all for me...", "neutral", "jamm")
-			cutscene:text("* I guess it shows a lot, right?", "side_smile", "jamm")
-			cutscene:text("* And, sure. She may not have completed the project...", "side_smile", "jamm")
+			cutscene:text("* I guess it shows a lot,[wait:5] right?", "side_smile", "jamm")
+			cutscene:text("* And,[wait:5] sure.[wait:10] She may not have completed the project...", "side_smile", "jamm")
 			cutscene:text("* But it's in better condition than the DR fandom.", "smug", "jamm")
 			cutscene:hideNametag()
 			cutscene:look(jamm, "down")
@@ -1246,7 +1254,7 @@ return {
 			Game.world.music:play()
 			cutscene:look(jamm, "right")
 			
-			cutscene:text("* Jamm and Dess talked for the rest of the night, having fun...")
+			cutscene:text("* Jamm and Dess talked for the rest of the night,[wait:5] having fun...")
 			cutscene:text("* (Jamm and Dess learned [color:yellow]JD Batter[color:white]!)")
 		end
 		Game:setFlag("jamm_closure", true)
@@ -1254,5 +1262,135 @@ return {
         Game:getPartyMember("jamm").has_act = false
         Game:setFlag("jamm_canact", false)
 		cutscene:mapTransition("fwood/entry", "exit", "down")
+    end,
+	failed_experiments = function(cutscene, event)
+		cutscene:text("* The depths of the lab.")
+		cutscene:text("* Luthane,[wait:5] if you're here,[wait:5] please get out immediately.")
+		cutscene:text("* Failed experiments lie ahead.")
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Failed experiments???", "speechless", "jamm")
+		cutscene:text("* Should we go on,[wait:5] Dess?", "nervous_left", "jamm")
+		cutscene:showNametag("Dess")
+		cutscene:text("* Honestly,[wait:5] I'm pretty curious.", "eyebrow", "dess")
+		cutscene:text("* We found something pretty insane here.", "neutral", "dess")
+		cutscene:showNametag("Jamm")
+		cutscene:text("* I mean,[wait:5] the sign says to leave...", "nervous", "jamm")
+		cutscene:text("* But yeah,[wait:5] I'm curious too.", "suspicious", "jamm")
+		cutscene:hideNametag()
+    end,
+	secret_door = function(cutscene, event)
+		cutscene:text("* The previous rooms had something to do with Luthane.")
+		cutscene:text("* Only speak the word,[wait:5] and you'll be let in.")
+		if not Game:getFlag("acj_secret_door_completed") then
+			if Game:getFlag("acj_secret_door_guesses", 0) == 0 then
+				cutscene:showNametag("Jamm")
+				cutscene:text("* Something to do with me, huh...", "suspicious", "jamm")
+				cutscene:text("* I'll be honest,[wait:5] I wasn't really paying attention.", "nervous", "jamm")
+				cutscene:text("* You got any ideas,[wait:5] Dess?", "look_left", "jamm")
+			elseif Game:getFlag("acj_secret_door_guesses") == 1 then
+				cutscene:showNametag("Jamm")
+				cutscene:text("* Well, I do have one idea...", "smile", "jamm")
+				cutscene:text("* Will it work,[wait:5] is the question.", "look_left", "jamm")
+			elseif Game:getFlag("acj_secret_door_guesses") == 2 then
+				cutscene:showNametag("Jamm")
+				cutscene:text("* So the last two weren't correct...", "worried", "jamm")
+				cutscene:text("* Maybe it could be...", "worried_down", "jamm")
+			elseif Game:getFlag("acj_secret_door_guesses") == 3 then
+				cutscene:showNametag("Dess")
+				cutscene:text("* let me try again", "neutral", "dess")
+				cutscene:showNametag("Jamm")
+				cutscene:text("* Uh,[wait:5] sure...", "look_left", "jamm")
+				cutscene:text("* Maybe another perspective is required.", "nervous_left", "jamm")
+			elseif Game:getFlag("acj_secret_door_guesses") == 4 then
+				cutscene:showNametag("Dess")
+				cutscene:text("* ...", "neutral", "dess")
+				cutscene:text("* ...!", "wtf_b", "dess")
+				cutscene:text("* we're idiots lmao", "neutral", "dess")
+				cutscene:showNametag("Jamm")
+				cutscene:text("* Wait,[wait:5] what?", "suspicious", "jamm")
+				cutscene:showNametag("Dess")
+				cutscene:text("* Deoxynn.", "neutral", "dess")
+				cutscene:hideNametag()
+				Game:setFlag("acj_secret_door_completed", true)
+				local shape = Game.world.map:getHitbox("secret_puzzle_1")
+				shape.collidable = false
+				Game.world.map:getTileLayer("DoorLayer").visible = false
+				Assets.playSound("impact")
+				cutscene:wait(1)
+				cutscene:showNametag("Jamm")
+				cutscene:text("* What the hell!?", "shocked", "jamm")
+				cutscene:text("* We really are idiots![wait:10]\n* How did I not get that!?", "speechless_smile", "jamm")
+				cutscene:text("* ...", "neutral", "jamm")
+				cutscene:text("* Wait,[wait:5] Deoxynn was the answer?", "smile", "jamm")
+				cutscene:text("* I'm glad Ania was paying attention to that!", "happy", "jamm")
+				cutscene:showNametag("Dess")
+				cutscene:text("* Was there any doubt?", "neutral", "dess")
+				cutscene:showNametag("Jamm")
+				cutscene:text("* Not really,[wait:5] honestly...", "look_left", "jamm")
+				cutscene:text("* But you never really know,[wait:5] right?", "neutral", "jamm")
+				cutscene:text("* Come on,[wait:5] let's continue.", "smile", "jamm")
+				cutscene:hideNametag()
+				return
+			end
+			cutscene:hideNametag()
+			
+			wbi_ok = false
+			wbi = InputMenu(8)
+			wbi.as_warp_bin_ui = false
+			wbi.cancellable = false
+			wbi.finish_cb = function(_action, input)
+				wbi_ok = true
+				action = input
+			end
+			Game.world:spawnObject(wbi, "ui")
+			cutscene:wait(function() return wbi_ok end)
+			
+			if string.upper(action) == "DEOXYNN" then
+				Game:setFlag("acj_secret_door_completed", true)
+				local shape = Game.world.map:getHitbox("secret_puzzle_1")
+				shape.collidable = false
+				Game.world.map:getTileLayer("DoorLayer").visible = false
+				Assets.playSound("impact")
+				cutscene:wait(1)
+			end
+			
+			if not Game:getFlag("acj_secret_door_completed") then
+				if Game:getFlag("acj_secret_door_guesses", 0) == 0 then
+					cutscene:showNametag("Dess")
+					cutscene:text("* Damn it", "neutral", "dess")
+					cutscene:showNametag("Jamm")
+					cutscene:text("* That wasn't it,[wait:5] huh?", "stern", "jamm")
+					cutscene:text("* Let's take a look at the rooms and try again.", "side_smile", "jamm")
+				elseif Game:getFlag("acj_secret_door_guesses") == 1 then
+					cutscene:showNametag("Dess")
+					cutscene:text("* Damn it", "neutral", "dess")
+					cutscene:showNametag("Jamm")
+					cutscene:text("* That wasn't it either,[wait:5] huh?", "stern", "jamm")
+					cutscene:text("* This might be trickier than I thought...", "stern", "jamm")
+				elseif Game:getFlag("acj_secret_door_guesses") == 2 then
+					cutscene:showNametag("Dess")
+					cutscene:text("* Damn it", "neutral", "dess")
+					cutscene:showNametag("Jamm")
+					cutscene:text("* Can you stop saying that every time we're wrong?", "stern", "jamm")
+					cutscene:showNametag("Dess")
+					cutscene:text("* nope lmao", "condescending", "dess")
+				elseif Game:getFlag("acj_secret_door_guesses") == 3 then
+					cutscene:showNametag("Dess")
+					cutscene:text("* Damn it", "neutral", "dess")
+				end
+				Game:addFlag("acj_secret_door_guesses", 1)
+			else
+				cutscene:showNametag("Jamm")
+				cutscene:text("* Wow,[wait:5] Deoxynn was the answer?", "smile", "jamm")
+				cutscene:text("* I'm glad Ania was paying attention to that!", "happy", "jamm")
+				cutscene:showNametag("Dess")
+				cutscene:text("* Was there any doubt?", "neutral", "dess")
+				cutscene:showNametag("Jamm")
+				cutscene:text("* Not really,[wait:5] honestly...", "look_left", "jamm")
+				cutscene:text("* But you never really know,[wait:5] right?", "neutral", "jamm")
+				cutscene:text("* Come on,[wait:5] let's continue.", "smile", "jamm")
+			end
+		end
+		cutscene:hideNametag()
     end,
 }

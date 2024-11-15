@@ -4,7 +4,7 @@
     // Displays on the main menu.
     "name": "Jamm's DLC",
     // Displays underneath the name. Optional.
-    "subtitle": "A DLC of multiple stories. Includes the following:\n* The Forgotten Wood\n* The Emerald Sea",
+    "subtitle": "A DLC of multiple stories. Includes the following:\n* The Forgotten Wood\n* The Emerald Sea\n* Du_es N' Deceits",
 	
 	"creator": "AcousticJamm",
 
@@ -62,6 +62,18 @@
 	"dev": true,
 	
 	"hide_name": true,
+	
+    "dlc": {
+        "extraBinCodes": {},
+        "worldMap": {},
+        "bosses": {
+            "ania_boss": {
+                "name": "Shade Ania",
+                "encounter": "ania_boss",
+                "spritePath": ["assets/sprites/battle/enemies/shade_ania/idle", 0.2, true]
+            }
+        }
+    }
 
     // Config values for the engine and any libraries you may have.
     // These config values can control chapter-specific features as well.

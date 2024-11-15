@@ -1,7 +1,8 @@
 return {
-  version = "1.5",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.8.6",
+  tiledversion = "1.10.1",
+  class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
   width = 30,
@@ -13,7 +14,7 @@ return {
   properties = {
     ["border"] = "castle",
     ["music"] = "jamm_dungeon",
-    ["name"] = "A. Dungeon - Entrance"
+    ["name"] = "A. Dungeon - Entry"
   },
   tilesets = {
     {
@@ -31,6 +32,7 @@ return {
       height = 21,
       id = 1,
       name = "Tile Layer 1",
+      class = "",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -71,6 +73,7 @@ return {
       height = 21,
       id = 2,
       name = "Tile Layer 2",
+      class = "",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -108,6 +111,7 @@ return {
       draworder = "topdown",
       id = 4,
       name = "collision",
+      class = "",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -344,6 +348,7 @@ return {
       draworder = "topdown",
       id = 5,
       name = "objects",
+      class = "",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -429,6 +434,7 @@ return {
       draworder = "topdown",
       id = 6,
       name = "markers",
+      class = "",
       visible = true,
       opacity = 1,
       offsetx = 0,

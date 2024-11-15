@@ -32,7 +32,7 @@ function Shadynn:init()
     }
 
     -- Check text (automatically has "ENEMY NAME - " at the start)
-    self.check = "AT 8 DF 0\n* A deep memory from within Jamm's heart."
+    self.check = {"AT 8 DF 0\n* A deep memory from within Jamm's heart.", "Her dark power as a shade enemy is what keeps her going."}
 
     -- Text randomly displayed at the bottom of the screen each turn
     self.text = {
