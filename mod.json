@@ -70,6 +70,7 @@
             "ania_boss": {
                 "name": "Shade Ania",
                 "encounter": "ania_boss",
+				"flag": "jamm_closure",
                 "spritePath": ["assets/sprites/battle/enemies/shade_ania/idle", 0.2, true]
             }
         }
