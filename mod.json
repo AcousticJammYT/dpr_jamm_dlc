@@ -71,7 +71,8 @@
                 "name": "Shade Ania",
                 "encounter": "ania_boss",
 				"flag": "jamm_closure",
-                "spritePath": ["assets/sprites/battle/enemies/shade_ania/idle", 0.2, true]
+                "preview": ["assets/sprites/battle/enemies/shade_ania/idle.png", 80, 50],
+                "grad_color": [ 0.359375, 0.34375, 0.734375 ]
             }
         }
     },
