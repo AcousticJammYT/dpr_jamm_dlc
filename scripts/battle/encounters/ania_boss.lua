@@ -7,7 +7,7 @@ function Dummy:init()
     self.text = "* The dungeon boss approaches.\n* Jamm is stunned."
 	
 	self.boss_rush = false
-	if Game:getFlag("jamm_closure") == true then
+	if Game.bossrush_encounters ~= nil or Game:getFlag("jamm_closure") == true then
         self.boss_rush = true
         self.text = "* The dungeon boss approaches."
     end
