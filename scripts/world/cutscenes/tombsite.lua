@@ -24,17 +24,8 @@ return {
 		cutscene:showNametag("Jamm")
 		cutscene:text("* Oh, hey.", "shaded_neutral", "jamm")
 		
-		if brenda then
-			cutscene:showNametag("Brenda")
-			cutscene:text("* Jamm, is that you?", "shock", "brenda")
-			cutscene:text("* You don't look to good.\n* Are you alright?", "neutral", "brenda")
-			cutscene:showNametag("Jamm")
-			cutscene:text("* As alright as I can be, I guess.", "shaded_neutral", "jamm")
-			cutscene:text("* It's just that I'm visiting my wife.", "shaded_frown", "jamm")
-		else
-			cutscene:text("* Sorry, you didn't catch me at a bad time.", "shaded_neutral", "jamm")
-			cutscene:text("* Just that I'm visiting my wife...", "shaded_frown", "jamm")
-		end
+		cutscene:text("* Sorry, you didn't catch me at a bad time.", "shaded_neutral", "jamm")
+		cutscene:text("* Just that I'm visiting my wife...", "shaded_frown", "jamm")
 		
 		cutscene:text("* I miss her.", "shaded_frown", "jamm")
 		
