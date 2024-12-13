@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="28" height="20" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#4b54bc" nextlayerid="8" nextobjectid="25">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="28" height="20" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#4b54bc" nextlayerid="8" nextobjectid="29">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -120,6 +120,27 @@
   <object id="21" name="interactable" x="880" y="520" width="40" height="80">
    <properties>
     <property name="cutscene" value="marcyquest.stone_sign_3"/>
+   </properties>
+  </object>
+  <object id="25" name="pirate_chest" x="580" y="620">
+   <properties>
+    <property name="money" type="int" value="25"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="26" name="pirate_chest" x="180" y="100">
+   <properties>
+    <property name="money" type="int" value="25"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="27" name="si_4" x="40" y="220">
+   <point/>
+  </object>
+  <object id="28" name="transition" x="-40" y="160" width="40" height="120">
+   <properties>
+    <property name="map" value="marcyquest/stone_island/si_4"/>
+    <property name="marker" value="si_3"/>
    </properties>
   </object>
  </objectgroup>

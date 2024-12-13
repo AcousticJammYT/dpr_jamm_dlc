@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.10.1",
+  tiledversion = "1.11.0",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 25,
+  nextobjectid = 29,
   backgroundcolor = { 75, 84, 188 },
   properties = {
     ["music"] = "shadow"
@@ -457,6 +457,65 @@ return {
           visible = true,
           properties = {
             ["cutscene"] = "marcyquest.stone_sign_3"
+          }
+        },
+        {
+          id = 25,
+          name = "pirate_chest",
+          type = "",
+          shape = "point",
+          x = 580,
+          y = 620,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["money"] = 25
+          }
+        },
+        {
+          id = 26,
+          name = "pirate_chest",
+          type = "",
+          shape = "point",
+          x = 180,
+          y = 100,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["money"] = 25
+          }
+        },
+        {
+          id = 27,
+          name = "si_4",
+          type = "",
+          shape = "point",
+          x = 40,
+          y = 220,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 28,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = -40,
+          y = 160,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "marcyquest/stone_island/si_4",
+            ["marker"] = "si_3"
           }
         }
       }

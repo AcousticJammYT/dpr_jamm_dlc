@@ -23,7 +23,7 @@ return {
 		cutscene:showNametag("Marcy")
 		cutscene:text("* Are you mad,[wait:5] papa...?", "frown", "marcy")
 		cutscene:showNametag("Jamm")
-		cutscene:text("* Mad isn't the word I'd use, Marcy.", "determined", "jamm")
+		cutscene:text("* Mad isn't the word I'd use,[wait:5] Marcy.", "determined", "jamm")
 		cutscene:text("* Try disappointed.", "stern", "jamm")
 		cutscene:text("* *sigh*", "shaded_neutral", "jamm")
 		cutscene:text("* You know I'm only looking out for you,[wait:5] right,[wait:5] Marcy?", "worried", "jamm")
@@ -73,7 +73,7 @@ return {
 		cutscene:showNametag("Jamm")
 		cutscene:text("* Glad to hear it.", "happy", "jamm")
 		jamm:resetSprite()
-		cutscene:text("* I'm going to explore the ship, alright?", "side_smile", "jamm")
+		cutscene:text("* I'm going to explore the ship,[wait:5] alright?", "side_smile", "jamm")
 		cutscene:hideNametag()
 		cutscene:wait(cutscene:walkToSpeed(jamm, jamm.x, jamm.y + 80, 4, "up"))
 		cutscene:showNametag("Jamm")
@@ -209,7 +209,7 @@ return {
 			cutscene:text("* You know,[wait:5] the last time I was on a ship was...", "happy", "brenda")
 			cutscene:text("* Hmm...", "neutral_side", "brenda")
 			cutscene:showNametag("Marcy")
-			cutscene:text("* Is something wrong,[wait:5] Aunt Brenda?", "confused", "marcy")
+			cutscene:text("* Is something wrong,[wait:5] Brenda?", "confused", "marcy")
 			cutscene:showNametag("Brenda")
 			cutscene:text("* I just can't remember if I was on a boat before...", "frown_side", "brenda")
 			cutscene:text("* Oh,[wait:5] well.[wait:10]\n* I'm sure it'll come back to me.", "happy", "brenda")
@@ -278,7 +278,7 @@ return {
 		cutscene:showNametag("Marcy")
 		cutscene:text("* Marcy finds that unfair.", "frown", "marcy")
 		cutscene:showNametag("Jamm")
-		cutscene:text("* I'm only looking out for you, Marcy.", "worried", "jamm")
+		cutscene:text("* I'm only looking out for you,[wait:5] Marcy.", "worried", "jamm")
 		cutscene:text("* You tend to roll around in your sleep,[wait:5] and with the ship swaying...", "worried_down", "jamm")
 		cutscene:text("* All I'm saying is that the lower bunk is less of a fall.", "worried", "jamm")
 		cutscene:showNametag("Marcy")
@@ -350,14 +350,14 @@ return {
 		cutscene:text("* On the door is carved the words,[wait:5] \"Adults only.\"")
 		if Game:getFlag("marcy_with_party") then
 			cutscene:showNametag("Jamm")
-			if not (Game:getFlag("marcyquest_year", tonumber(os.date("%Y"))) <= tonumber(os.date("%Y")) - 12) then
+			if not (Game:getFlag("marcyquest_year", tonumber(os.date("%Y"))) <= tonumber(os.date("%Y")) - 15) then
 				cutscene:text("* Sorry,[wait:5] Marcy.[wait:10]\n* There's a lot of alcohol in that room.", "worried", "jamm")
-				cutscene:text("* Maybe I can bring you in there in 12 years.", "neutral", "jamm")
+				cutscene:text("* Maybe I can bring you in there in 15 years.", "neutral", "jamm")
 			else
 				cutscene:text("* Hmm...", "neutral", "jamm")
-				cutscene:text("* Well,[wait:5] it has been 12 years since we arrived...", "look_left", "jamm")
-				cutscene:text("* You should be at least 18 by now...", "neutral", "jamm")
-				cutscene:text("* Has it really been 12 years since we started the trip?", "nervous", "jamm")
+				cutscene:text("* Well,[wait:5] it has been 15 years since we arrived...", "look_left", "jamm")
+				cutscene:text("* You should be at least 21 by now...", "neutral", "jamm")
+				cutscene:text("* Has it really been 15 years since we started the trip?", "nervous", "jamm")
 			end
 			cutscene:hideNametag()
 		end
@@ -365,7 +365,7 @@ return {
 	
     captain_command = function(cutscene, event)
 		cutscene:showNametag("Cpt. Darkbeard")
-		cutscene:text("* Keep up the effort, laddies!", "neutral", "darkbeard")
+		cutscene:text("* Keep up the effort,[wait:5] laddies!", "neutral", "darkbeard")
 		cutscene:text("* 'Er else, ye'll be forced to walk the plank!", "neutral", "darkbeard")
 		cutscene:hideNametag()
 		cutscene:text("* Sounds like Captain Darkbeard is working everyone hard.")
@@ -410,7 +410,7 @@ return {
 		cutscene:wait(cutscene:walkToSpeed(Game.world.player, "postslide", 4, "up"))
 		cutscene:showNametag("Jamm")
 		cutscene:text("* Well,[wait:5] that worked out on my end.", "side_smile", "jamm")
-		cutscene:text("* Are you feeling alright, Marcy?[wait:10]\n* You hurt at all?", "look_left", "jamm")
+		cutscene:text("* Are you feeling alright,[wait:5] Marcy?[wait:10]\n* You hurt at all?", "look_left", "jamm")
 		cutscene:showNametag("Marcy")
 		cutscene:text("* Marcy feels great,[wait:5] papa!", "smile", "marcy")
 		cutscene:showNametag("Jamm")

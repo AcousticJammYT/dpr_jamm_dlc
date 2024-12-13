@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.10.1",
+  tiledversion = "1.11.0",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 37,
+  nextobjectid = 39,
   backgroundcolor = { 75, 84, 188 },
   properties = {
     ["music"] = "shadow"
@@ -506,6 +506,19 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 37,
+          name = "secret",
+          type = "",
+          shape = "point",
+          x = 1000,
+          y = 260,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -708,6 +721,22 @@ return {
           visible = true,
           properties = {
             ["map"] = "marcyquest/stone_island/si_3",
+            ["marker"] = "si_2"
+          }
+        },
+        {
+          id = 38,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1040,
+          y = 200,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "marcyquest/stone_island/secret",
             ["marker"] = "si_2"
           }
         }
