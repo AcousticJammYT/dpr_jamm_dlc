@@ -17,7 +17,7 @@ function Shadynn:init()
     self.defense = 0
     -- Enemy reward
     self.money = Game.battle.boss_rush and 0 or 100
-	if Game:isDessMode() then
+	if Game:isDessMode() and not Game.battle.boss_rush then
 		self.experience = 250
 	end
 	self.service_mercy = 0
