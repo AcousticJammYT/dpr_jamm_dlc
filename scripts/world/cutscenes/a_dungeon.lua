@@ -1,22 +1,37 @@
 return {
     key1 = function(cutscene, event)
-		if not Game:getFlag("acj_key1") then
-			cutscene:text("* You search the hay and find a [color:green]key[color:white] on a keychain.")
-			cutscene:showNametag("Jamm")
-			cutscene:text("* Huh...[wait:5]\n* The first place I'd look...", "nervous", "jamm")
-			cutscene:text("* I guess Ania wanted to make this first part easy for me???", "nervous", "jamm")
-			cutscene:showNametag("Dess")
-			cutscene:text("* So,[wait:5] a needle in a haystack?", "eyebrow", "dess")
-			cutscene:showNametag("Jamm")
-			cutscene:text("* I hate how literal you were being with that.", "neutral", "jamm")
-			Game:setFlag("acj_key1", true)
+		if Game:isDessMode() then
+			if not Game:getFlag("acj_key1") then
+				cutscene:text("* You search the hay and find a [color:green]key[color:white] on a keychain.")
+				cutscene:showNametag("Dess")
+				cutscene:text("* swag", "swag", "dess")
+				Game:setFlag("acj_key1", true)
+				cutscene:hideNametag()
+				cutscene:text("* You grab the keychain.")
+			else
+				cutscene:showNametag("Dess")
+				cutscene:text("* no more keys here", "neutral", "dess")
+			end
 			cutscene:hideNametag()
-			cutscene:text("* You grab the keychain.")
 		else
-			cutscene:showNametag("Jamm")
-			cutscene:text("* I don't think there's anything else in the hay...", "neutral", "jamm")
+			if not Game:getFlag("acj_key1") then
+				cutscene:text("* You search the hay and find a [color:green]key[color:white] on a keychain.")
+				cutscene:showNametag("Jamm")
+				cutscene:text("* Huh...[wait:5]\n* The first place I'd look...", "nervous", "jamm")
+				cutscene:text("* I guess Ania wanted to make this first part easy for me???", "nervous", "jamm")
+				cutscene:showNametag("Dess")
+				cutscene:text("* So,[wait:5] a needle in a haystack?", "eyebrow", "dess")
+				cutscene:showNametag("Jamm")
+				cutscene:text("* I hate how literal you were being with that.", "neutral", "jamm")
+				Game:setFlag("acj_key1", true)
+				cutscene:hideNametag()
+				cutscene:text("* You grab the keychain.")
+			else
+				cutscene:showNametag("Jamm")
+				cutscene:text("* I don't think there's anything else in the hay...", "neutral", "jamm")
+			end
+			cutscene:hideNametag()
 		end
-		cutscene:hideNametag()
     end,
     music_key = function(cutscene, event)
 		cutscene:text("* You look down and find a [color:red]key[color:white].")
@@ -92,6 +107,20 @@ return {
 		cutscene:hideNametag()
     end,
     lock2 = function(cutscene, event)
+		if Game:isDessMode() and Game:getFlag("acj_combat_key") then
+			cutscene:showNametag("Dess")
+			cutscene:text("* okay i am not doing the rest of the puzzles", "angry", "dess")
+			cutscene:text("* hmmm how do i get past this though...", "neutral_c", "dess")
+			cutscene:text("* ohohoh,[wait:5] i think i know a way", "smug", "dess")
+			cutscene:hideNametag()
+			cutscene:text("* (Dess used a lockpick on the door.)")
+			cutscene:showNametag("Dess")
+			cutscene:text("* we do a little trolling", "thisremindsmeofthetimeiwasindarkplace", "dess")
+			cutscene:hideNametag()
+			Assets.playSound("dooropen")
+			cutscene:mapTransition("fwood/dungeon_inside/final_hall", "entry")
+			return
+		end
 		if Game:getFlag("acj_combat_key") and Game:getFlag("acj_observe_key") and Game:getFlag("acj_game_key") and Game:getFlag("acj_music_key") then
 			cutscene:text("* Unlock the door with your [color:red]k[color:blue]e[color:purple]y[color:yellow]s[color:white]?")
 			local choice = cutscene:choicer({"Yes", "No"})
@@ -112,6 +141,17 @@ return {
 			Game:setFlag("acj_king_talk", true)
 			cutscene:showNametag("King")
 			cutscene:text("[facec:king/regretful][voice:king]* Hm.")
+			if Game:isDessMode() then
+				cutscene:text("[facec:king/sad][voice:king]* Oh?\n* What are you\nlooking at?")
+				cutscene:showNametag("Dess")
+				cutscene:text("* haha you're in gay baby jail", "smug", "dess")
+				cutscene:showNametag("King")
+				cutscene:text("[facec:king/pissed][voice:king]* I am NOT a gay baby!")
+				cutscene:text("[facec:king/pout][voice:king]* Er,[wait:5] not that there's\nanything wrong with\nbeing a gay baby.")
+				cutscene:text("[facec:king/dissapointed][voice:king]* I'm just not a\ngay baby.")
+				cutscene:hideNametag()
+				return
+			end
 			cutscene:text("[facec:king/sad][voice:king]* Oh?\n* What are you two looking\nat?")
 			cutscene:showNametag("Jamm")
 			cutscene:text("* You're the Chaos King, right?", "neutral", "jamm")
@@ -149,6 +189,12 @@ return {
 		cutscene:hideNametag()
     end,
     music = function(cutscene, event)
+		if Game:isDessMode() then
+			cutscene:showNametag("Dess")
+			cutscene:text("* i am NOT doing this shit", "annoyed", "dess")
+			cutscene:hideNametag()
+			return
+		end
 		local text
 
         local function gonerTextFade(wait)
@@ -586,6 +632,12 @@ return {
 		cutscene:hideNametag()
     end,
     game = function(cutscene, event)
+		if Game:isDessMode() then
+			cutscene:showNametag("Dess")
+			cutscene:text("* i am NOT doing this shit", "annoyed", "dess")
+			cutscene:hideNametag()
+			return
+		end
 		local text
 
         local function gonerTextFade(wait)
@@ -730,6 +782,12 @@ return {
 		end
 	end,
 	observation = function(cutscene, event)
+		if Game:isDessMode() then
+			cutscene:showNametag("Dess")
+			cutscene:text("* i am NOT doing this shit", "annoyed", "dess")
+			cutscene:hideNametag()
+			return
+		end
 		local text
 
         local function gonerTextFade(wait)
@@ -933,6 +991,13 @@ return {
 		cutscene:hideNametag()
 	end,
     hallway_1 = function(cutscene, event)
+		if Game:isDessMode() then
+			cutscene:showNametag("Dess")
+			cutscene:text("* skip,[wait:5] skip", "calm_b", "dess")
+			cutscene:text("* dude when does this dungeon get good", "angry", "dess")
+			cutscene:hideNametag()
+			return
+		end
 		cutscene:showNametag("Dess")
 		cutscene:text("* So,[wait:5] your wife made this dungeon for you?", "eyebrow", "dess")
 		cutscene:showNametag("Jamm")
@@ -952,6 +1017,13 @@ return {
 		cutscene:hideNametag()
     end,
     hallway_2 = function(cutscene, event)
+		if Game:isDessMode() then
+			cutscene:showNametag("Dess")
+			cutscene:text("* dude i dont care about this dead jamm wife lore", "calm_b", "dess")
+			cutscene:text("* i just wanna do a cool and swag boss fight", "angry", "dess")
+			cutscene:hideNametag()
+			return
+		end
 		if not Game:getFlag("dungeonkiller") then
 			cutscene:showNametag("Dess")
 			cutscene:text("* because clearly it's our dungeon,[wait:5] not yours lol", "condescending", "dess")
@@ -980,6 +1052,12 @@ return {
 		cutscene:hideNametag()
     end,
     hallway_3 = function(cutscene, event)
+		if Game:isDessMode() then
+			cutscene:showNametag("Dess")
+			cutscene:text("* okay im ALMOST there", "neutral", "dess")
+			cutscene:hideNametag()
+			return
+		end
 		if not Game:getFlag("dungeonkiller") then
 			cutscene:showNametag("Dess")
 			cutscene:text("* so where's the fakeout", "condescending", "dess")
@@ -1004,6 +1082,39 @@ return {
 		cutscene:hideNametag()
     end,
     boss = function(cutscene, event)
+		if Game:isDessMode() then
+			local dess = cutscene:getCharacter("dess")
+			local sa = cutscene:getCharacter("shade_ania")
+			cutscene:walkToSpeed("dess", 200, 200, 4)
+			cutscene:wait(4)
+			cutscene:wait(cutscene:slideTo(sa, 480, 240, 0.5))
+			Assets.playSound("impact")
+			cutscene:shakeCharacter(sa, 2, 0)
+			Game.world.music:play("jamm_boss", 1, 1)
+			cutscene:wait(1)
+			cutscene:showNametag("Dess")
+			cutscene:text("* aw hell yeah,[wait:5] boss fight time", "challenging", "dess")
+			if Game:getFlag("can_kill") then
+				cutscene:text("* ermmm im gonna fuckin smite this thing", "calm_b", "dess")
+				cutscene:text("* i sure do hope jamm doesn't find out about this", "teehee", "dess")
+			end
+			cutscene:hideNametag()
+			
+			cutscene:startEncounter("ania_boss", true, sa)
+		
+			sa:remove()
+			Game.world.music:stop()
+			cutscene:wait(1)
+			cutscene:showNametag("Dess")
+			cutscene:text("* yippee i did it", "teehee", "dess")
+			cutscene:text("* okay time to head out", "calm", "dess")
+			cutscene:hideNametag()
+			cutscene:wait(cutscene:fadeOut())
+			cutscene:loadMap("fwood/dungeon", "jamm_spawn", "down")
+			cutscene:wait(cutscene:fadeIn())
+			Game:setFlag("jamm_closure", true)
+			return
+		end
 		local jamm = cutscene:getCharacter("jamm")
 		local dess = cutscene:getCharacter("dess")
 		local sa = cutscene:getCharacter("shade_ania")

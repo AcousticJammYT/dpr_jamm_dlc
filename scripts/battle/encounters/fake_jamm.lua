@@ -7,7 +7,11 @@ function Dummy:init()
     self.text = "* Battle against a faker."
 
     -- Battle music ("battle" is rude buster)
-    self.music = "battle"
+    if Game:isDessMode() then
+        self.music = "battle"
+    else
+        self.music = "faker"
+    end
     -- Enables the purple grid battle background
     self.background = false
 
