@@ -19,7 +19,6 @@ return {
 	
 	fake_jamm = function(cutscene,event)
 		local jamm = cutscene:getCharacter("fake_jamm")
-		local brenda = cutscene:getCharacter("brenda")
 		
 		cutscene:showNametag("Jamm")
 		cutscene:text("* Oh, hey.", "shaded_neutral", "jamm")
@@ -29,9 +28,10 @@ return {
 		
 		cutscene:text("* I miss her.", "shaded_frown", "jamm")
 		
-		if brenda then
-			cutscene:showNametag("Brenda")
-			cutscene:text("* Looks like you need to get your mind off of it.", "neutral_side", "brenda")
+		if Game:isDessMode() then
+			cutscene:showNametag("Dess")
+			cutscene:text("* uhhh okay", "neutral_c", "dess")
+			cutscene:text("* im gonna go pilfer the diner for roobeer if you wanna join", "condescending", "dess")
 		else
 			cutscene:hideNametag()
 			cutscene:text("* You tell Jamm to try to get his mind off of it.")
@@ -47,9 +47,9 @@ return {
 		
 		Game:setFlag("fake_jamm", true)
 		
-		if brenda then
-			cutscene:showNametag("Brenda")
-			cutscene:text("* (Why does something feel off?)", "frown_side", "brenda")
+		if Game:isDessMode() then
+			cutscene:showNametag("Dess")
+			cutscene:text("* i see no way this will backfire within the next few minutes", "heckyeah", "dess")
 		end
 		cutscene:hideNametag()
 		
@@ -176,17 +176,31 @@ return {
 		local leader = members[1]
 		cutscene:wait(cutscene:walkToSpeed(leader, "party", 4))
 		
-		cutscene:showNametag("Jamm")
-		cutscene:text("* Good job at making it out of the bulk of the forest.", "shaded_pissed", "jamm")
-		cutscene:text("* I should've known the solution was on the gravestones.", "shaded_neutral", "jamm")
-		cutscene:text("* However...", "shaded_neutral", "jamm")
-		cutscene:hideNametag()
+		if Game:getFlag("fwoods_desscut") then
+			cutscene:showNametag("Jamm")
+			cutscene:text("* ...", "shaded_frown", "jamm")
+			cutscene:text("* That's one way to exit the forest, I guess.", "shaded_neutral", "jamm")
+			cutscene:text("* Anyways...", "shaded_neutral", "jamm")
+			cutscene:hideNametag()
+		else
+			cutscene:showNametag("Jamm")
+			cutscene:text("* Good job at making it out of the bulk of the forest.", "shaded_pissed", "jamm")
+			cutscene:text("* I should've known the solution was on the gravestones.", "shaded_neutral", "jamm")
+			cutscene:text("* However...", "shaded_neutral", "jamm")
+			cutscene:hideNametag()
+		end
 		
 		cutscene:detachFollowers()
 		cutscene:wait(cutscene:walkToSpeed(fake_jamm, "jamm", 4))
 		cutscene:showNametag("Jamm?")
 		cutscene:text("* I can't let you pass alive.", "shaded_revealed", "jamm")
 		cutscene:hideNametag()
+
+		if Game:isDessMode() then
+			cutscene:showNametag("Dess")
+			cutscene:text("* oh you have got to be", "angry", "dess", {auto = true})
+			cutscene:hideNametag()
+		end
 		
 		cutscene:setAnimation(fake_jamm, "attack")
 		cutscene:wait(1/15)
@@ -215,6 +229,11 @@ return {
 		Assets.playSound("laz_c", 1, 1)
 		
 		cutscene:wait(1)
+		if Game:isDessMode() then
+			cutscene:showNametag("Dess")
+			cutscene:text("* im gonna break your fucking kneecaps, dipshit", "angry", "dess")
+			cutscene:hideNametag()
+		end
 		
 		cutscene:look(fake_jamm, "left")
 		cutscene:resetSprite(fake_jamm)
@@ -388,13 +407,15 @@ return {
 			Assets.stopAndPlaySound("noise")
 			cutscene:wait(0.75)
 		end
-		
-		if brenda then
-			cutscene:showNametag("Brenda")
-			cutscene:text("* Yeah, I think we're good now.", "neutral", "brenda")
-		end
-		
-		if susie then
+
+		if Game:isDessMode() then
+			cutscene:showNametag("Jamm")
+			cutscene:text("* Oh,[wait:5] it's you.", "suspicious", "jamm")
+			cutscene:showNametag("Dess")
+			cutscene:text("* ay thanks for saving my bacon there pal", "wink", "dess")
+			cutscene:showNametag("Jamm")
+			cutscene:text("* ... Right.", "suspicious", "jamm")
+		elseif susie then
 			cutscene:showNametag("Susie")
 			cutscene:text("[voice:susie]* What the hell was that!?", "angry", "susie")
 			cutscene:showNametag("Jamm")
@@ -411,7 +432,21 @@ return {
 			cutscene:text("* I don't accept your apology but thank you anyway lego man.", "bruh", "noel")
 		end
 		
-		if #Game.party >= 3 then
+		if Game:isDessMode() then
+			cutscene:text("* I'm just gonna...", "stern", "jamm")
+			cutscene:text("* Head out now.", "suspicious", "jamm")
+			cutscene:hideNametag()
+			
+			cutscene:wait(cutscene:fadeOut(0.75))
+			jamm:remove()
+			cutscene:wait(cutscene:fadeIn(0.75))
+		
+			cutscene:attachFollowers()
+			cutscene:wait(2)
+			cutscene:showNametag("Dess")
+			cutscene:text("* well ermmm THAT just happened", "condescending", "dess")
+			cutscene:hideNametag()
+		elseif #Game.party >= 3 then
 			cutscene:showNametag("Jamm")
 			cutscene:text("* I'd join you guys, but it looks like you have a full party.", "neutral", "jamm")
 			cutscene:text("* I'll see you later then.\n* Let me think for now.", "neutral", "jamm")
@@ -537,6 +572,53 @@ return {
 				cutscene:text("* ...Not yet.", "shaded_frown", "jamm")
 			else
 				cutscene:text("* It's a door.\n* It doesn't seem to budge.")
+				if Game:isDessMode() and Game:getFlag("acj_quest_prog") >= 2 then
+					cutscene:showNametag("Dess")
+					cutscene:text("* lemme try", "calm_b", "dess")
+					cutscene:text("* open [wait:5]seasame", "angry", "dess")
+					cutscene:hideNametag()
+					cutscene:wait(5)
+					cutscene:showNametag("Dess")
+					cutscene:text("* ...", "angry", "dess")
+					cutscene:text("[noskip]* well i've tried all i could do", "neutral_c", "dess", {auto = true})
+					cutscene:hideNametag()
+					local layer = Game.world.map:getTileLayer("door_closed")
+					layer.visible = false
+					Assets.playSound("screenshake")
+						
+					cutscene:wait(1)
+					cutscene:showNametag("Dess")
+					cutscene:text("* ...", "wtf_b", "dess")
+					cutscene:text("* aw yeah", "smug", "dess")
+					if Game:getFlag("can_kill") then
+						cutscene:text("* wait dont the enemies here not give you any exp", "angry", "dess")
+						cutscene:text("* hold on unless...", "neutral_c", "dess")
+						cutscene:text("* yo god my homeslice breadslice dawg", "condescending", "dess")
+						cutscene:text("* theres a bunch of unholy beasts in this dungeon", "dess.exe", "dess")
+						cutscene:text("* can you give me the power to smite them straight to hell?", "calm_b", "dess")
+						cutscene:hideNametag()
+						dess:flash()
+						Assets.playSound("boost")
+						cutscene:wait(1)
+						cutscene:showNametag("Dess")
+						cutscene:text("* ay thanks g", "swag", "dess")
+					end
+					cutscene:text("* ok time to go in", "smug", "dess")
+					cutscene:hideNametag()
+
+					cutscene:wait(cutscene:fadeOut(0.75))
+					Assets.playSound("impact")
+					cutscene:wait(1)
+					cutscene:loadMap("fwood/dungeon_inside/entrance", "entry", "up")
+					
+					cutscene:wait(cutscene:fadeIn(0.75))
+					
+					cutscene:showNametag("Dess")
+					cutscene:text("* oh,[wait:5] the door locked behind me.", "reverse", "dess")
+					cutscene:text("* im not trapped here with these shades", "doom", "dess")
+					cutscene:text("* these shades are trapped in here with me", "doom_shiteatinggrin", "dess")
+					cutscene:hideNametag()
+				end
 			end
 		end
 		cutscene:hideNametag()

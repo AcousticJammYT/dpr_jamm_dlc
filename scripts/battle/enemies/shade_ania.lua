@@ -17,7 +17,9 @@ function Shadynn:init()
     self.defense = 0
     -- Enemy reward
     self.money = Game.battle.boss_rush and 0 or 100
-    self.experience = 0
+	if Game:isDessMode() then
+		self.experience = 250
+	end
 	self.service_mercy = 0
 	
 	self.boss = true
@@ -55,6 +57,8 @@ function Shadynn:init()
 	self.auto_spare = true
 	
 	self.cutscened = Game:getFlag("jamm_closure")
+
+	self.killable = true
 end
 
 function Shadynn:getXAction(battler)

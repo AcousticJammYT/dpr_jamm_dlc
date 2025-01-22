@@ -2,9 +2,22 @@ return {
     ---@param cutscene WorldCutscene
     main = function(cutscene, map, partyleader)
         if Game:isDessMode() then
-            cutscene:showNametag("Dess")
-            cutscene:text("* allan please add dialogue", "neutral", "dess")
-            cutscene:hideNametag()
+            if map == "fwood/cross" then
+                cutscene:showNametag("Dess")
+                cutscene:text("* dude i always fucking hated this maze", "angry", "dess")
+                cutscene:getCharacter("dess"):setFacing("down")
+                cutscene:text("* hey i bet you hate it too", "neutral", "dess")
+                cutscene:text("* tell you what,[wait:5] ill use my AWESOME DESS POWERS(trademarked)", "condescending", "dess")
+                cutscene:text("* and save us both a lot of time", "condescending", "dess")
+                cutscene:text("* okay here i go", "calm", "dess")
+                cutscene:hideNametag()
+                cutscene:mapTransition("fwood/boss", "top")
+                Game:setFlag("fwoods_desscut", true)
+            else
+                cutscene:showNametag("Dess")
+                cutscene:text("* allan please add dialogue", "neutral", "dess")
+                cutscene:hideNametag()
+            end
         else
             if map == "grey_cliffside/cliffside_start" then
                 if partyleader == "hero" then

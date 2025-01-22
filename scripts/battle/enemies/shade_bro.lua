@@ -14,6 +14,9 @@ function Shadynn:init()
     self.attack = 6
     self.defense = 0
     self.money = 30
+    if Game:isDessMode() then
+        self.experience = 30
+    end
 
     self.spare_points = 25
 	self.service_mercy = 15
@@ -39,6 +42,8 @@ function Shadynn:init()
 	
 	self.siner = 0
 	self.shadow = false
+
+    self.killable = true
 end
 
 function Shadynn:isXActionShort(battler)

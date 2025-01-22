@@ -4,7 +4,11 @@ function Dummy:init()
     super.init(self)
 
     -- Text displayed at the bottom of the screen at the start of the encounter
-    self.text = "* The dungeon boss approaches.\n* Jamm is stunned."
+	if Game:isDessMode() then
+    	self.text = "* The dungeon boss approaches."
+	else
+		self.text = "* The dungeon boss approaches.\n* Jamm is stunned."
+	end
 	
 	self.boss_rush = false
 	if Game.bossrush_encounters ~= nil or Game:getFlag("jamm_closure") == true then
@@ -41,7 +45,7 @@ function Dummy:onBattleInit()
 end
 
 function Dummy:onBattleStart()
-	if not self.boss_rush then
+	if not self.boss_rush and Game:isDessMode() == "false" then
 		local jamm = Game.battle.party[1]
 		jamm.chara.stun = true
 		jamm:setSprite("battle/hurt_1")
@@ -50,7 +54,7 @@ end
 
 function Dummy:update()
 	super.update(self)
-	if not self.boss_rush then
+	if not self.boss_rush and Game:isDessMode() == "false" then
 		local jamm = Game.battle.party[1]
 		if Game.battle.turn_count < 2 and not Game.battle.unstun then
 			jamm.chara.stun = true
