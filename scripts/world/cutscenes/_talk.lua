@@ -19,61 +19,64 @@ return {
                 cutscene:hideNametag()
             end
         else
-            if map == "grey_cliffside/cliffside_start" then
-                if partyleader == "hero" then
-                    local hero = cutscene:getCharacter("hero")
-                    local heroFacing = hero.sprite.facing
-                    if #Game.party == 1 and not Game:getFlag("cliffside_askedDeltaWarrior") then
-                        hero:setFacing("down")
-                        cutscene:textTagged("* Well,[wait:5] here we are,[wait:5] our mission begins now.", "neutral_closed", "hero")
-                        cutscene:textTagged("* Say,[wait:5] do you happen to know whoever's responsible for this?", "neutral_closed_b", "hero")
-                        local choicer = cutscene:choicer({"Yes", "Nope"})
-                        if choicer == 1 then
-                            cutscene:textTagged("* Great,[wait:5] what do they look like?", "happy", "hero")
-                            choicer = cutscene:choicer({"You But\nBlue", "Purple\nLizard", "Fluffy Goat", "Deer Girl"})
-                            if choicer == 1 then
-                                Game:setFlag("cliffside_askedDeltaWarrior", "kris")
-                            elseif choicer == 2 then
-                                Game:setFlag("cliffside_askedDeltaWarrior", "susie")
-                            elseif choicer == 3 then
-                                Game:setFlag("cliffside_askedDeltaWarrior", "ralsei")
-                            else
-                                Game:setFlag("cliffside_askedDeltaWarrior", "noelle")
-                            end
-                            cutscene:textTagged("* Got it.[wait:10]\n* I'll keep that in mind.", "neutral_closed", "hero")
-                        else
-                            Game:setFlag("cliffside_askedDeltaWarrior", "dunno")
-                            cutscene:textTagged("* Well it was worth a shot.", "annoyed", "hero")
-                            cutscene:textTagged("* Let's keep going, then.", "neutral_closed", "hero")
-                        end
-                        hero:setFacing(heroFacing)
-                    elseif #Game.party == 1 and Game:getFlag("cliffside_askedDeltaWarrior") ~= "dunno" then
-                        hero:setFacing("down")
-                        if Game:getFlag("cliffside_askedDeltaWarrior") == "kris" then
-                            cutscene:textTagged("* Someone who looks like me but blue...", "neutral_closed", "hero")
-                        elseif Game:getFlag("cliffside_askedDeltaWarrior") == "susie" then
-                            cutscene:textTagged("* A purple lizard...", "neutral_closed", "hero")
-                        elseif Game:getFlag("cliffside_askedDeltaWarrior") == "ralsei" then
-                            cutscene:textTagged("* Some kind of fluffy goat...", "neutral_closed", "hero")
-                        else
-                            cutscene:textTagged("* Some sort of deer girl...", "neutral_closed", "hero")
-                        end
-                        cutscene:textTagged("* I'll keep that in mind.", "neutral_closed_b", "hero")
-                        hero:setFacing(heroFacing)
-                    elseif #Game.party == 1 then
-                        hero:setFacing("down")
-                        cutscene:textTagged("* Let's keep going.", "neutral_closed", "hero")
-                        hero:setFacing(heroFacing)
-                    else
-                    end
-                end
-            elseif map == "field" then
-                cutscene:text("* (You give a moment of silence for those in need...)")
-                cutscene:text("[speed:0.1]* (...)\n[wait:10](...)\n[wait:10](...)")
-                cutscene:text("* (There will always be hope.)")
-            else
-                cutscene:text("* (But your voice echoed aimlessly.)")
-            end
+			if map == "fwood/cross" then
+				if Game:hasPartyMember("jamm") then
+					if Game:getFlag("dungeonkiller") then
+						cutscene:showNametag("Jamm")
+						cutscene:text("* ...", "shaded_neutral", "jamm")	-- Temp
+					else
+						cutscene:showNametag("Jamm")
+						cutscene:text("* Ah, the forest maze...", "smile", "jamm")
+						cutscene:text("* Call me crazy,[wait:5] but it makes me nostalgic for some reason...", "happy", "jamm")
+						if Game:hasPartyMember("dess") then
+							cutscene:showNametag("Dess")
+							cutscene:text("* you're definitely crazy", "smile", "dess")
+							cutscene:showNametag("Jamm")
+							cutscene:text("* ...okay,[wait:5] I guess I walked into that one.", "nervous_left", "jamm")
+						end
+						cutscene:text("* I even have the solution memorized,[wait:5] just for convenience.", "neutral", "jamm")
+						cutscene:text("* It's West,[wait:5] East,[wait:5] North,[wait:5] South,[wait:5] North,[wait:5] East,[wait:5] South,[wait:5] North.", "side_smile", "jamm")
+					end
+				end
+			elseif map == "fwood/graves" then
+				if Game:hasPartyMember("jamm") then
+					if Game:getFlag("dungeonkiller") then
+						cutscene:showNametag("Jamm")
+						cutscene:text("* ...", "shaded_neutral", "jamm")	-- Temp
+					else
+						cutscene:showNametag("Jamm")
+						cutscene:text("* ...", "worried", "jamm")
+						cutscene:text("* Rest in peace,[wait:5] my love...", "worried", "jamm")
+					end
+				end
+			elseif map == "fwood/boss" then
+				if Game:hasPartyMember("jamm") then
+					if Game:getFlag("dungeonkiller") then
+						cutscene:showNametag("Jamm")
+						cutscene:text("* ...", "shaded_neutral", "jamm")	-- Temp
+					else
+						cutscene:showNametag("Jamm")
+						cutscene:text("* Man, if I hadn't come to save you guys...", "worried", "jamm")
+						cutscene:text("* ...Let's not think about that,[wait:5] haha...", "worried", "jamm")
+						if Game:hasPartyMember("susie") then
+							cutscene:showNametag("Susie")
+							cutscene:text("* But why weren't we able to damage him...?", "smile", "susie")
+							cutscene:showNametag("Jamm")
+							cutscene:text("* ...I'll give you the short answer.", "nervous_left", "jamm")
+							cutscene:text("* He's magically attuned to my blood somehow.", "worried", "jamm")
+							cutscene:text("* Meaning that only I can damage him.", "worried_down", "jamm")
+							cutscene:text("* ...Please don't ask me how that works.", "nervous_left", "jamm")
+						end
+					end
+				end
+			elseif map == "fwood/entry" then
+				if Game:hasPartyMember("jamm") then
+					cutscene:showNametag("Jamm")
+					cutscene:text("* ...", "shaded_neutral", "jamm")
+					cutscene:text("* ...Let's get this over with,[wait:5] alright?", "shaded_neutral", "jamm")
+				end
+			end
         end
+		cutscene:hideNametag()
     end,
 }
