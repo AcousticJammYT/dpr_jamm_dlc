@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 27,
+  nextobjectid = 28,
   backgroundcolor = { 75, 84, 188 },
   properties = {
     ["music"] = "shadow"
@@ -571,6 +571,22 @@ return {
           visible = true,
           properties = {
             ["money"] = 25
+          }
+        },
+        {
+          id = 27,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 800,
+          y = 1200,
+          width = 160,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "marcyquest/stone_island/si_5",
+            ["marker"] = "si_4"
           }
         }
       }
