@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#4b54bc" nextlayerid="7" nextobjectid="27">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="40" tileheight="40" infinite="0" backgroundcolor="#4b54bc" nextlayerid="7" nextobjectid="28">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -169,6 +169,12 @@
     <property name="money" type="int" value="25"/>
    </properties>
    <point/>
+  </object>
+  <object id="27" name="transition" x="800" y="1200" width="160" height="40">
+   <properties>
+    <property name="map" value="marcyquest/stone_island/si_5"/>
+    <property name="marker" value="si_4"/>
+   </properties>
   </object>
  </objectgroup>
 </map>

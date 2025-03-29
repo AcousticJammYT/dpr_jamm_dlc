@@ -257,6 +257,15 @@ return {
 			cutscene:wait(1)
 		elseif id == "pauling" then
 			cutscene:text("* She seems to be writing some sort of contract...")
+		elseif id == "hero" then
+			cutscene:showNametag("Hero")
+			cutscene:text("* Never thought sailing would be part of the job...", "neutral_closed", "hero")
+			cutscene:text("* But hey,[wait:5] this is progress,[wait:5] right?", "neutral_closed_b", "hero")
+			cutscene:text("* Sealing this fountain will probably buy us more time.", "neutral_closed", "hero")
+			cutscene:showNametag("Marcy")
+			cutscene:text("* ...You're betting on something you don't know?", "confused", "marcy")
+			cutscene:showNametag("Hero")
+			cutscene:text("* I've been unconscious up until a few hours ago,[wait:5] okay?", "neutral_opened", "hero")
 		else
 			cutscene:text("* This character's cutscene text has not been written.")
 			cutscene:text("* Please contact " .. Game.party[event.partyslot].name .. "'s dev and tell them to write for marcyquest.party_1.")

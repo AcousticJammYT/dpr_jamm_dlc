@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.10.1",
+  tiledversion = "1.11.0",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 12,
+  nextobjectid = 14,
   properties = {
     ["border"] = "castle",
     ["music"] = "jamm_dungeon"
@@ -163,6 +163,22 @@ return {
           properties = {
             ["cutscene"] = "a_dungeon.secret_door"
           }
+        },
+        {
+          id = 12,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 240,
+          y = 150,
+          width = 160,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "fwood/dungeon_inside/superstar",
+            ["marker"] = "entry"
+          }
         }
       }
     },
@@ -187,6 +203,19 @@ return {
           shape = "point",
           x = 320,
           y = 440,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 13,
+          name = "exit",
+          type = "",
+          shape = "point",
+          x = 320,
+          y = 240,
           width = 0,
           height = 0,
           rotation = 0,

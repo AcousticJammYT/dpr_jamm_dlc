@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 5,
-  nextobjectid = 87,
+  nextobjectid = 92,
   properties = {
     ["border"] = "castle",
     ["music"] = "jamm_dungeon"
@@ -124,6 +124,61 @@ return {
           shape = "point",
           x = 360,
           y = 2320,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 87,
+          name = "entry",
+          type = "",
+          shape = "point",
+          x = 360,
+          y = 2380,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 88,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 280,
+          y = 2400,
+          width = 160,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "fwood/dungeon_inside/deoxynn_door",
+            ["marker"] = "exit"
+          }
+        },
+        {
+          id = 90,
+          name = "superstar_cut",
+          type = "",
+          shape = "point",
+          x = 360,
+          y = 2280,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 91,
+          name = "superstar_cam",
+          type = "",
+          shape = "point",
+          x = 360,
+          y = 1840,
           width = 0,
           height = 0,
           rotation = 0,
@@ -1054,6 +1109,21 @@ return {
             ["chase"] = true,
             ["encounter"] = "shadynn_2",
             ["group"] = "A"
+          }
+        },
+        {
+          id = 89,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 280,
+          y = 2280,
+          width = 160,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "a_dungeon.superstar"
           }
         }
       }

@@ -1345,7 +1345,7 @@ return {
 			cutscene:text("* you did return the favor lol", "wink", "dess")
 			cutscene:text("* Seriously,[wait:5] without you,[wait:5] Shade Ania would've...", "neutral_c", "dess")
 			cutscene:showNametag("Jamm")
-			cutscene:text("* ...", "shaded", "jamm")
+			cutscene:text("* ...", "shaded_neutral", "jamm")
 			cutscene:text("* Let's not think about that,[wait:5] alright?", "worried", "jamm")
 			cutscene:text("* We're alive,[wait:5] and that's what counts.", "neutral", "jamm")
 			cutscene:text("* You know what though,[wait:5] Dess?", "neutral", "jamm")
@@ -1502,6 +1502,22 @@ return {
 				cutscene:text("* Come on,[wait:5] let's continue.", "smile", "jamm")
 			end
 		end
+		cutscene:hideNametag()
+    end,
+    superstar = function(cutscene, event)
+		cutscene:wait(cutscene:walkToSpeed(Game.world.player, "superstar_cut", 4, facing, keep_facing))
+		cutscene:detachCamera()
+		cutscene:wait(cutscene:panTo("superstar_cam", 1))
+		cutscene:wait(1)
+		cutscene:wait(cutscene:attachCamera(1))
+		cutscene:showNametag("Jamm")
+		cutscene:text("* ...Wow.", "nervous", "jamm")
+		cutscene:text("* That is a lot of shade beings,[wait:5] huh?", "nervous_left", "jamm")
+		cutscene:showNametag("Dess")
+		cutscene:text("* I am not fighting all of those.", "wtf_b", "dess")
+		cutscene:text("* I mean, I love breaking things, but...", "wtf_b", "dess")
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Yeah. Let's see what we can find.", "nervous", "jamm")
 		cutscene:hideNametag()
     end,
 }
