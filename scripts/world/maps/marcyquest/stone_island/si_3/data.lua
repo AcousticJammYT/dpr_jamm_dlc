@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 29,
+  nextobjectid = 30,
   backgroundcolor = { 75, 84, 188 },
   properties = {
     ["music"] = "shadow"
@@ -368,6 +368,19 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 29,
+          name = "si_4",
+          type = "",
+          shape = "point",
+          x = 40,
+          y = 220,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -488,19 +501,6 @@ return {
           properties = {
             ["money"] = 25
           }
-        },
-        {
-          id = 27,
-          name = "si_4",
-          type = "",
-          shape = "point",
-          x = 40,
-          y = 220,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
         },
         {
           id = 28,

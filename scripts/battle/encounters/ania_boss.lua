@@ -45,7 +45,7 @@ function Dummy:onBattleInit()
 end
 
 function Dummy:onBattleStart()
-	if not self.boss_rush and Game:isDessMode() == "false" then
+	if not self.boss_rush and not Game:isDessMode() then
 		local jamm = Game.battle.party[1]
 		jamm.chara.stun = true
 		jamm:setSprite("battle/hurt_1")
@@ -54,7 +54,7 @@ end
 
 function Dummy:update()
 	super.update(self)
-	if not self.boss_rush and Game:isDessMode() == "false" then
+	if not self.boss_rush and not Game:isDessMode() then
 		local jamm = Game.battle.party[1]
 		if Game.battle.turn_count < 2 and not Game.battle.unstun then
 			jamm.chara.stun = true

@@ -18,4 +18,13 @@ function Dummy:init()
     --self:addEnemy("dummy")
 end
 
+function Dummy:createSoul(x, y, color)
+    return FreezerSoul(x, y)
+end
+function Dummy:onTurnStart()
+	for _,battler in pairs(Game.battle.party) do
+		battler:toggleOverlay(false)
+	end
+end
+
 return Dummy

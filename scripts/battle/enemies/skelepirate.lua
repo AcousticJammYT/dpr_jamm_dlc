@@ -32,23 +32,16 @@ function Pirate:init()
     self.low_health_text = "* Skelepirate's bones are cracked."
 
     self:registerAct("Immitate")
-    self:registerAct("Compliment")
+    self:registerMarcyAct("Compliment")
 end
 
 function Pirate:onAct(battler, name)
     if name == "Compliment" then
-		if battler.chara.id == "jamm" then
-			self:addMercy(100)
-			return {
-				"[facec:marcy/smile][voice:marcy]* Marcy really likes your\nbandana!",
-				"[face]* Skelepirate seems to really appreciate the compliment."
-			}
-		end
-        self:addMercy(50)
-        return {
-            "* " .. battler.chara.name .. " compliments the Skelepirate's appearance.",
-			"* Skelepirate seems to appreciate the compliment."
-        }
+		self:addMercy(100)
+		return {
+			"[facec:marcy/smile][voice:marcy]* Marcy really likes your\nbandana!",
+			"[face]* Skelepirate seems to appreciate the compliment."
+		}
 
     elseif name == "Immitate" then
 		self.attack = self.attack + 2
