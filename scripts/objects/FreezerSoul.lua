@@ -24,7 +24,7 @@ function FreezerSoul:doMovement()
 	else
 		self.frozen_overlay.visible = true
 		for _,battler in pairs(Game.battle.party) do
-			if Game:getFlag("SHINY", {})[self.actor:getShinyID()] and Game:getFlag("SHINY", {})[self.actor:getShinyID()] == true then
+			if Game:getFlag("SHINY", {})[battler.actor:getShinyID()] and Game:getFlag("SHINY", {})[battler.actor:getShinyID()] == true then
 				if (battler.actor.animations["battle/tactic_freeze_shiny"] ~= nil) then
 					battler:toggleOverlay(true)
 					local fanim = "battle/tactic_freeze_shiny"
