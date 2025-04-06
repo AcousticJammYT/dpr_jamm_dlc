@@ -3,6 +3,8 @@ local FreezerSoul, super = Class(Soul)
 function FreezerSoul:init(x, y)
     super:init(self, x, y)
 	
+	self:setColor(0, 1, 1)
+	
 	self.frozen_overlay = Sprite("player/heart_dodge_frozen_overlay")
 	self.frozen_overlay:setOrigin(0.5, 0.5)
 	self.frozen_overlay.visible = false
