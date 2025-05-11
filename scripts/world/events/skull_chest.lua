@@ -1,7 +1,7 @@
 local PirateChest, super = Class(Event, "skull_chest")
 
 function PirateChest:init(data)
-    super.init(self, data.x, data.y)
+    super.init(self, data)
 
     properties = data.properties or {}
 

@@ -3,7 +3,7 @@
 local Brazier, super = Class(Event, "brazier")
 
 function Brazier:init(data)
-	super.init(self, data.x, data.y, data.w, data.h)
+	super.init(self, data)
 
     local properties = data.properties or {}
 
