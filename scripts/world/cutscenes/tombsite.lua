@@ -1,19 +1,19 @@
 return {
     grave_1 = function(cutscene, event)
-        cutscene:text("* \"When you find all hopes have left,[wait:5] you're not right.\"")
+        cutscene:text("* \"When you find all hopes have [color:yellow]left[color:white],[wait:5] you're not [color:yellow]right[color:white].\"")
     end,
     grave_2 = function(cutscene, event)
         cutscene:text("* Ania Jamm[wait:5]\n* 1999-2023")
-        cutscene:text("* \"Always look up.[wait:5] Your dreams are waiting.\"")
+        cutscene:text("* \"Always look [color:yellow]up[color:white].[wait:5] Your dreams are waiting.\"")
     end,
     grave_3 = function(cutscene, event)
-        cutscene:text("* \"Life is designed to knock you down.[wait:5] Just get back up.\"")
+        cutscene:text("* \"Life is designed to knock you [color:yellow]down[color:white].[wait:5] Just get back [color:yellow]up[color:white].\"")
     end,
     grave_4 = function(cutscene, event)
-        cutscene:text("* \"I believe in doing the right things;[wait:5] not knocking others down.\"")
+        cutscene:text("* \"I believe in doing the [color:yellow]right[color:white] things;[wait:5] not knocking others [color:yellow]down[color:white].\"")
     end,
     grave_5 = function(cutscene, event)
-        cutscene:text("* \"Our greatest weakness lies in giving up.\"")
+        cutscene:text("* \"Our greatest weakness lies in giving [color:yellow]up[color:white].\"")
     end,
 	-- left, right, up, down, up, right, down, up
 	
@@ -51,6 +51,10 @@ return {
 			cutscene:showNametag("Dess")
 			cutscene:text("* i see no way this will backfire within the next few minutes", "heckyeah", "dess")
 		end
+		cutscene:showNametag("Jamm")
+		cutscene:text("* I read an inscription about the crossroads...", "shaded_neutral", "jamm")
+		cutscene:text("* It said to work from left to right on the gravestones...", "shaded_neutral", "jamm")
+		cutscene:text("* ... and to make note of every direction on them.", "shaded_neutral", "jamm")
 		cutscene:hideNametag()
 		
 		Game:setFlag("acj_quest_prog", 1)

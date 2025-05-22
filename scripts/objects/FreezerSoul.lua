@@ -3,6 +3,8 @@ local FreezerSoul, super = Class(Soul)
 function FreezerSoul:init(x, y)
     super:init(self, x, y)
 	
+	self:setColor(0, 1, 1)
+	
 	self.frozen_overlay = Sprite("player/heart_dodge_frozen_overlay")
 	self.frozen_overlay:setOrigin(0.5, 0.5)
 	self.frozen_overlay.visible = false
@@ -22,10 +24,18 @@ function FreezerSoul:doMovement()
 	else
 		self.frozen_overlay.visible = true
 		for _,battler in pairs(Game.battle.party) do
-			if (battler.actor.animations["battle/tactic_freeze"] ~= nil) then
-				battler:toggleOverlay(true)
-				local fanim = "battle/tactic_freeze"
-				battler.overlay_sprite:setAnimation(fanim)
+			if Game:getFlag("SHINY", {})[battler.actor:getShinyID()] and Game:getFlag("SHINY", {})[battler.actor:getShinyID()] == true then
+				if (battler.actor.animations["battle/tactic_freeze_shiny"] ~= nil) then
+					battler:toggleOverlay(true)
+					local fanim = "battle/tactic_freeze_shiny"
+					battler.overlay_sprite:setAnimation(fanim)
+				end
+			else
+				if (battler.actor.animations["battle/tactic_freeze"] ~= nil) then
+					battler:toggleOverlay(true)
+					local fanim = "battle/tactic_freeze"
+					battler.overlay_sprite:setAnimation(fanim)
+				end
 			end
 		end
 	end
