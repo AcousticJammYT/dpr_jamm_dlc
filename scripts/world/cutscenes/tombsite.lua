@@ -20,13 +20,39 @@ return {
 	fake_jamm = function(cutscene,event)
 		local jamm = cutscene:getCharacter("fake_jamm")
 		
+		cutscene:showNametag("???")
+		cutscene:text("* Oh,[wait:5] Ania...", "shaded_neutral", "jamm")
+		
+		if cutscene:getCharacter("hero") then
+			cutscene:showNametag("Hero")
+			cutscene:text("* Would you happen to be Jamm?", "neutral_closed", "hero")
+		elseif cutscene:getCharacter("susie") then
+			cutscene:showNametag("Susie")
+			cutscene:text("* Hey,[wait:5] are you, by any chance,[wait:5] named \"Jamm\"?", "nervous", "susie")
+		else
+			cutscene:hideNametag()
+			cutscene:text("* You ask the person if his name is Jamm.")
+		end
+		
+		cutscene:look(jamm, "down")
+		
 		cutscene:showNametag("Jamm")
-		cutscene:text("* Oh, hey.", "shaded_neutral", "jamm")
+		cutscene:text("* Yeah,[wait:5] who's asking?", "shaded_neutral", "jamm")
 		
-		cutscene:text("* Sorry, you didn't catch me at a bad time.", "shaded_neutral", "jamm")
-		cutscene:text("* Just that I'm visiting my wife...", "shaded_frown", "jamm")
+		if cutscene:getCharacter("susie") then
+			cutscene:showNametag("Susie")
+			cutscene:text("* Some kid asked us to find you for her.", "neutral", "susie")
+		elseif cutscene:getCharacter("hero") then
+			cutscene:showNametag("Hero")
+			cutscene:text("* Your daughter wanted us to find you.", "neutral_closed", "hero")
+		else
+			cutscene:hideNametag()
+			cutscene:text("* You tell Jamm that Marcy sent you to look for him.")
+		end
 		
-		cutscene:text("* I miss her.", "shaded_frown", "jamm")
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Ah,[wait:5] I see...[wait:10]\n* I didn't mean to make her worry...", "shaded_neutral", "jamm")
+		cutscene:text("* I just needed to visit my wife again.", "shaded_neutral", "jamm")
 		
 		if Game:isDessMode() then
 			cutscene:showNametag("Dess")
@@ -34,11 +60,11 @@ return {
 			cutscene:text("* im gonna go pilfer the diner for roobeer if you wanna join", "condescending", "dess")
 		else
 			cutscene:hideNametag()
-			cutscene:text("* You tell Jamm to try to get his mind off of it.")
+			cutscene:text("* You tell Jamm to try to spend some time with Marcy.")
 		end
 		
 		cutscene:showNametag("Jamm")
-		cutscene:text("* I mean, yeah, I guess that would help.", "shaded_neutral", "jamm")
+		cutscene:text("* I mean,[wait:5] yeah,[wait:5] I guess that would help.", "shaded_neutral", "jamm")
 		cutscene:hideNametag()
 		
 		jamm:convertToFollower(#Game.party, true)
@@ -58,8 +84,6 @@ return {
 		cutscene:hideNametag()
 		
 		Game:setFlag("acj_quest_prog", 1)
-		-- Game:getQuest("acj_quest"):unlock()
-		-- Kristal.callEvent("setDesc", "acj", "You found AcousticJamm in the forest. However, something seems off about him. Not only that, but the forest seems different than when you entered. Try to find your way out!")
 	end,
 	transition_1 = function(cutscene, event)
 		Game.world:mapTransition("fwood/graves", "entry")
@@ -169,7 +193,6 @@ return {
 		local fake_jamm = cutscene:getCharacter("fake_jamm"):convertToNPC()
 		Game:removeFollower(fake_jamm)
 		local jamm = cutscene:getCharacter("jamm")
-		local brenda = cutscene:getCharacter("brenda")
 		local susie = cutscene:getCharacter("susie")
 		local noel = cutscene:getCharacter("noel")
 		
@@ -183,7 +206,7 @@ return {
 		if Game:getFlag("fwoods_desscut") then
 			cutscene:showNametag("Jamm")
 			cutscene:text("* ...", "shaded_frown", "jamm")
-			cutscene:text("* That's one way to exit the forest, I guess.", "shaded_neutral", "jamm")
+			cutscene:text("* That's one way to exit the forest,[wait:5] I guess.", "shaded_neutral", "jamm")
 			cutscene:text("* Anyways...", "shaded_neutral", "jamm")
 			cutscene:hideNametag()
 		else
@@ -218,7 +241,7 @@ return {
 		cutscene:showNametag("Jamm?")
 		cutscene:text("* Do you see how easy it was to knock you down?", "shaded_revealed", "jamm")
 		cutscene:text("* It will be even easier to break you entirely.", "shaded_revealed", "jamm")
-		cutscene:text("* So then, how will this go?", "shaded_revealed", "jamm")
+		cutscene:text("* So then,[wait:5] how will this go?", "shaded_revealed", "jamm")
 		cutscene:hideNametag()
 		
 		local party_walk_wait = nil
@@ -235,7 +258,7 @@ return {
 		cutscene:wait(1)
 		if Game:isDessMode() then
 			cutscene:showNametag("Dess")
-			cutscene:text("* im gonna break your fucking kneecaps, dipshit", "angry", "dess")
+			cutscene:text("* im gonna break your fucking kneecaps,[wait:5] dipshit", "angry", "dess")
 			cutscene:hideNametag()
 		end
 		
@@ -243,7 +266,7 @@ return {
 		cutscene:resetSprite(fake_jamm)
 		
 		cutscene:showNametag("Jamm?")
-		cutscene:text("* The hard way, huh?", "shaded_revealed", "jamm")
+		cutscene:text("* The hard way,[wait:5] huh?", "shaded_revealed", "jamm")
 		cutscene:hideNametag()
 		
 		cutscene:wait(cutscene:walkToSpeed(fake_jamm, "fake_jamm", 4, "left"))
@@ -259,21 +282,21 @@ return {
 		cutscene:wait(1/15)
 		
 		for i, member in ipairs(members) do
-                        print(member.actor.id)
-                        if member.actor.id == "noel" then
-                            noel_null = love.math.random(1, 3)
-                            if noel_null == 1 then
-                                Assets.playSound("awkward", 1, 1)
-                                Assets.playSound("voice/noel-#", 2, 1)
-                                cutscene:resetSprite(member)
-                            else
-                                noel_hit = 55
+            print(member.actor.id)
+            if member.actor.id == "noel" then
+                noel_null = love.math.random(1, 3)
+                if noel_null == 1 then
+                    Assets.playSound("awkward", 1, 1)
+                    Assets.playSound("voice/noel-#", 2, 1)
+                    cutscene:resetSprite(member)
+                else
+                    noel_hit = 55
 			        cutscene:setAnimation(member, "battle/defeat")
-                            end
-                        else
+                end
+            else
 			    cutscene:setAnimation(member, "battle/defeat")
-                        end
-                        member:shake(10, 10)
+            end
+            member:shake(10, 10)
 		end
 		Assets.playSound("hurt", 1, 1)
 		
@@ -283,12 +306,12 @@ return {
 		cutscene:text("* Pathetic.", "shaded_revealed", "jamm")
 		cutscene:hideNametag()
 
-                if noel_null then
-                    if noel_null == 1 then
+        if noel_null then
+            if noel_null == 1 then
 		        cutscene:wait(1)
 		        cutscene:showNametag("Noel")
 
-                        cutscene:text("* Wait, where did everybody go???", "...", "noel")
+                cutscene:text("* Wait, where did everybody go???", "...", "noel")
 		        cutscene:hideNametag()
 		        cutscene:wait(1)
 
@@ -298,70 +321,70 @@ return {
 		        cutscene:hideNametag()
 		        cutscene:setAnimation(fake_jamm, "attack")
 		        cutscene:wait(1/15)
-                        local noel_null = love.math.random(1, 3)
+                local noel_null = love.math.random(1, 3)
 
-                        noel:shake(10, 10)
+                noel:shake(10, 10)
 
-                        if noel_null == 1 then
-                            Assets.playSound("awkward", 1, 1)
-                            Assets.playSound("voice/noel-#", 2, 1)
-			    cutscene:setSprite(noel, "walk/right_1")
+                if noel_null == 1 then
+                    Assets.playSound("awkward", 1, 1)
+                    Assets.playSound("voice/noel-#", 2, 1)
+			        cutscene:setSprite(noel, "walk/right_1")
 		            cutscene:wait(2)
 		            cutscene:showNametag("Noel")
-                            cutscene:text("* Oh...[wait:5] [face:...]Wait, [face:bruh]what?", "neutral", "noel", {auto = true})
+                    cutscene:text("* Oh...[wait:5] [face:...]Wait, [face:bruh]what?", "neutral", "noel", {auto = true})
 		            cutscene:hideNametag()
 		            for i = 1, 3 do
 
-                                    noel:shake(10, 10)
+                        noel:shake(10, 10)
 
-    		                    local noel_null = love.math.random(1, 2)
+    		            local noel_null = love.math.random(1, 2)
 
-    		                    if noel_null == 1 then
-    		                        cutscene:setAnimation(fake_jamm, "attack")
-                                        Assets.playSound("awkward", 1, 1)
-                                        Assets.playSound("voice/noel-#", 2, 1)
-                                    else
-    		                        cutscene:setAnimation(fake_jamm, "attack")
-                                        Assets.playSound("voice/noel-#", 2, 1)
-                                        cutscene:setAnimation(noel, "battle/defeat")
-                                        noel_hit = 55
-                                        break
-   		                    end
-                                    cutscene:wait(1/2)
-		            end
-                            if noel_hit == 55 then
-		                cutscene:showNametag("Jamm?")
-		                cutscene:text("* Stay down.", "shaded_neutral", "jamm")
-		                cutscene:text("* Well, it's time to--", "shaded_revealed", "jamm", {auto = true})
-                            else
-		                cutscene:showNametag("Noel")
-                                cutscene:text("* HEY!", "madloud", "noel", {auto = true})
-		                cutscene:hideNametag()
-                                Game.world.music:fade(0, 0.25)
-                                cutscene:wait(1)
-                                local wobblything = Music("wobblything_loop", 1.5, 1)
-		                cutscene:wait(cutscene:walkToSpeed(noel, 230, 260, 0.5, "right"))
-                                wobblything:stop()
-                                Game.world.music:fade(1, 0.5)
-		                cutscene:showNametag("Noel")
-                                cutscene:text("* You missed [color:yellow]dumbass[color:white].", "bruh", "noel")
-                                cutscene:text("* What kind of construction worker are you?", "huh", "noel")
-
-		                cutscene:showNametag("Jamm?")
-		                cutscene:text("* Why won't you--", "shaded_desperate", "jamm", {auto = true})
-                            end
+    		            if noel_null == 1 then
+    		                cutscene:setAnimation(fake_jamm, "attack")
+                            Assets.playSound("awkward", 1, 1)
+                            Assets.playSound("voice/noel-#", 2, 1)
                         else
-                            noel:shake(10, 10)
+    		                cutscene:setAnimation(fake_jamm, "attack")
                             Assets.playSound("voice/noel-#", 2, 1)
                             cutscene:setAnimation(noel, "battle/defeat")
                             noel_hit = 55
-                            cutscene:wait(1)
-		            cutscene:text("* Well, it's time to--", "shaded_revealed", "jamm", {auto = true})
-                        end
-                    end
-                else
-		    cutscene:text("* Well, it's time to--", "shaded_revealed", "jamm", {auto = true})
-                end
+                            break
+   		                end
+                        cutscene:wait(1/2)
+		            end
+                    if noel_hit == 55 then
+						cutscene:showNametag("Jamm?")
+						cutscene:text("* Stay down.", "shaded_neutral", "jamm")
+						cutscene:text("* Well,[wait:5] it's time to--", "shaded_revealed", "jamm", {auto = true})
+					else
+						cutscene:showNametag("Noel")
+						cutscene:text("* HEY!", "madloud", "noel", {auto = true})
+						cutscene:hideNametag()
+						Game.world.music:fade(0, 0.25)
+						cutscene:wait(1)
+						local wobblything = Music("wobblything_loop", 1.5, 1)
+						cutscene:wait(cutscene:walkToSpeed(noel, 230, 260, 0.5, "right"))
+						wobblything:stop()
+						Game.world.music:fade(1, 0.5)
+						cutscene:showNametag("Noel")
+						cutscene:text("* You missed [color:yellow]dumbass[color:white].", "bruh", "noel")
+						cutscene:text("* What kind of construction worker are you?", "huh", "noel")
+
+						cutscene:showNametag("Jamm?")
+						cutscene:text("* Why won't you--", "shaded_desperate", "jamm", {auto = true})
+					end
+				else
+					noel:shake(10, 10)
+					Assets.playSound("voice/noel-#", 2, 1)
+					cutscene:setAnimation(noel, "battle/defeat")
+					noel_hit = 55
+					cutscene:wait(1)
+					cutscene:text("* Well,[wait:5] it's time to--", "shaded_revealed", "jamm", {auto = true})
+				end
+			end
+        else
+		    cutscene:text("* Well,[wait:5] it's time to--", "shaded_revealed", "jamm", {auto = true})
+        end
 		
 		cutscene:showNametag("???")
 		cutscene:text("* Hold it!", nil, "jamm")
@@ -370,29 +393,30 @@ return {
 		cutscene:wait(cutscene:walkToSpeed(jamm, "jamm", 8, "right"))
 		
 		cutscene:showNametag("Jamm")
-		cutscene:text("* Well, Enzio.\n* Never thought you'd stoop this low.", "smirk", "jamm")
-		cutscene:text("* Stealing my Guilded account, sure.\n* But impersonation?", "smirk", "jamm")
+		cutscene:text("* Well,[wait:5] Enzio.[wait:10]\n* Never thought you'd stoop this low.", "smirk", "jamm")
+		cutscene:text("* Stealing my Guilded account,[wait:5] sure.[wait:10]\n* But impersonation?", "smirk", "jamm")
 		
-                if noel_null then
-                    if not noel_hit == 55 then
-		            cutscene:showNametag("Noel")
-                            cutscene:text("* Ah[wait:5] yes,[wait:5] [speed:0.5][color:yellow]Enzio[color:white][speed:1][wait:5] I remember [speed:0.5][color:yellow]Enzio[color:white][speed:1][wait:5].", "bruh", "noel")
-                            cutscene:text("* I am totally not completely lost at all.", "huh", "noel")
-                            cutscene:text("* [speed:0.5][color:yellow]Enzio[color:white][speed:1][wait:5] was the clown my cat hired for m'eye birthday.", "huh", "noel")
-                            cutscene:text("* (Who the hell is [speed:0.5][color:yellow]Enzio[color:white][speed:1][wait:5]???)", "oh", "noel")
-                    end
-                end
+        if noel_null then
+            if not noel_hit == 55 then
+		        cutscene:showNametag("Noel")
+                cutscene:text("* Ah[wait:5] yes,[wait:5] [speed:0.5][color:yellow]Enzio[color:white][speed:1][wait:5] I remember [speed:0.5][color:yellow]Enzio[color:white][speed:1][wait:5].", "bruh", "noel")
+                cutscene:text("* I am totally not completely lost at all.", "huh", "noel")
+                cutscene:text("* [speed:0.5][color:yellow]Enzio[color:white][speed:1][wait:5] was the clown my cat hired for m'eye birthday.", "huh", "noel")
+                cutscene:text("* (Who the hell is [speed:0.5][color:yellow]Enzio[color:white][speed:1][wait:5]???)", "oh", "noel")
+            end
+        end
 
 		cutscene:showNametag("Enzio")
 		cutscene:text("* How did you escape!?", "shaded_desperate", "jamm")
 		
 		cutscene:showNametag("Jamm")
-		cutscene:text("* Does it matter?\n* All that matters is you're done.", "smirk", "jamm")
+		cutscene:text("* Does it matter?[wait:10]\n* All that matters is you're done.", "smirk", "jamm")
 		
 		cutscene:resetSprite(fake_jamm)
 		
 		cutscene:showNametag("Enzio")
-		cutscene:text("* Well, in that case, I guess I'll take my leave.", "shaded_neutral", "jamm")
+		cutscene:text("* Tch...[wait:10]\n* This whole thing is inconsequential.", "shaded_neutral", "jamm")
+		cutscene:text("* We'll meet again,[wait:5] Jamm.", "shaded_neutral", "jamm")
 		cutscene:hideNametag()
 		
 		cutscene:wait(cutscene:fadeOut(0.75))
@@ -400,7 +424,7 @@ return {
 		cutscene:wait(cutscene:fadeIn(0.75))
 		
 		cutscene:showNametag("Jamm")
-		cutscene:text("* That was completely unexpected.", "stern", "jamm")
+		cutscene:text("* I'm sure we will,[wait:5] jerk...", "stern", "jamm")
 		cutscene:look(jamm, "left")
 		cutscene:text("* You okay?", "worried", "jamm")
 		cutscene:hideNametag()
@@ -427,7 +451,7 @@ return {
 			cutscene:text("* Sorry that you were involved.", "look_left", "jamm")
 		else
 			cutscene:showNametag("Jamm")
-			cutscene:text("* Phew, you're alright...", "nervous", "jamm")
+			cutscene:text("* Phew,[wait:5] you're alright...", "nervous", "jamm")
 			cutscene:text("* Sorry that you were involved in all this..", "look_left", "jamm")
 		end
 
@@ -450,10 +474,12 @@ return {
 			cutscene:showNametag("Dess")
 			cutscene:text("* well ermmm THAT just happened", "condescending", "dess")
 			cutscene:hideNametag()
-		elseif #Game.party >= 3 then
+		else
 			cutscene:showNametag("Jamm")
-			cutscene:text("* I'd join you guys, but it looks like you have a full party.", "neutral", "jamm")
-			cutscene:text("* I'll see you later then.\n* Let me think for now.", "neutral", "jamm")
+			cutscene:text("* Thanks for being a distraction for Enzio,[wait:5] by the way.", "neutral", "jamm")
+			cutscene:text("* I overheard that Marcy was looking for me,[wait:5] right?", "neutral", "jamm")
+			cutscene:text("* Meet me at my apartment later,[wait:5] alright?", "neutral", "jamm")
+			cutscene:text("* I'll thank you properly then.", "neutral", "jamm")
 			cutscene:hideNametag()
 			
 			cutscene:wait(cutscene:fadeOut(0.75))
@@ -462,27 +488,9 @@ return {
 		
 			cutscene:attachFollowers()
 			cutscene:wait(2)
-		else
-			cutscene:text("* I'll join your party, then.", "neutral", "jamm")
-			cutscene:hideNametag()
-			Game:addPartyMember("jamm")
-			Game:setFlag("jamm_party", true)
-			jamm:convertToFollower(#Game.party - 1)
-			cutscene:text("* Jamm joined the party.")
-			cutscene:attachFollowers()
-			cutscene:wait(0.5)
+			Game:setFlag("jamm_waiting", true)
 		end
-		Game:setFlag("jamm_inparty", true)
-		
 		Game:setFlag("acj_quest_prog", 2)
-		-- Mod:unlockPartyMember("jamm")
-		-- Kristal.callEvent("completeQuest", "acj")
-		-- Kristal.callEvent("setDesc", "acj", "You found AcousticJamm (for real this time) during your battle against Enzio. Now, AcousticJamm is on your side! However, with Enzio, this may only be the start...")
-	end,
-	jamm = function(cutscene, event)
-		cutscene:showNametag("Jamm")
-		cutscene:text("* See you later!", "smile", "jamm")
-		cutscene:hideNametag()
 	end,
 	door = function(cutscene, event)
 		local jamm = cutscene:getCharacter("jamm")

@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.10.1",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -306,9 +306,9 @@ return {
           visible = true,
           properties = {
             ["actor"] = "fake_jamm",
-            ["cond"] = "marcy_father and not fake_jamm",
             ["cutscene"] = "tombsite.fake_jamm",
-            ["facing"] = "up"
+            ["facing"] = "up",
+            ["flagcheck"] = "!fake_jamm"
           }
         },
         {
