@@ -13,7 +13,7 @@ end
 
 function PartyBattler:doOverlay()
 	if (not self.defending) and (not self.is_down) then
-		if not Game.battle.soul.FS then
+		if not (Game.battle.soul and Game.battle.soul.FS) then
 			self.sleeping = false
 			self.hurting = true
 			self:toggleOverlay(true)

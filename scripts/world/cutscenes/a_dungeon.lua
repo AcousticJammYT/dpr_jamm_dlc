@@ -197,29 +197,17 @@ return {
 		end
 		local text
 
-        local function gonerTextFade(wait)
-            local this_text = text
-            Game.world.timer:tween(1, this_text, { alpha = 0 }, "linear", function()
-                this_text:remove()
-            end)
-            if wait ~= false then
-                cutscene:wait(1)
-            end
-        end
-
-        -- FIXME: actually use skippable
         local function gonerText(str, advance, skippable)
             text = DialogueText("[speed:0.5][spacing:6][voice:none]" .. str, 160, 100, 640, 480,
                 { auto_size = true })
             text.layer = WORLD_LAYERS["textbox"]
-            text.skip_speed = not skippable
             text.parallax_x = 0
             text.parallax_y = 0
             Game.world:addChild(text)
 
             cutscene:wait(function() return not text:isTyping() end)
 			cutscene:wait(function() return Input.pressed("confirm") or Input.down("menu") end)
-            gonerTextFade(true)
+            text:remove()
         end
 		if Game:getFlag("acj_music_bonus") then
 			cutscene:text("* It appears doing this trial again won't earn you anything else.")
@@ -640,29 +628,17 @@ return {
 		end
 		local text
 
-        local function gonerTextFade(wait)
-            local this_text = text
-            Game.world.timer:tween(1, this_text, { alpha = 0 }, "linear", function()
-                this_text:remove()
-            end)
-            if wait ~= false then
-                cutscene:wait(1)
-            end
-        end
-
-        -- FIXME: actually use skippable
         local function gonerText(str, advance, skippable)
             text = DialogueText("[speed:0.5][spacing:6][voice:none]" .. str, 160, 100, 640, 480,
                 { auto_size = true })
             text.layer = WORLD_LAYERS["textbox"]
-            text.skip_speed = not skippable
             text.parallax_x = 0
             text.parallax_y = 0
             Game.world:addChild(text)
 
             cutscene:wait(function() return not text:isTyping() end)
 			cutscene:wait(function() return Input.pressed("confirm") or Input.down("menu") end)
-            gonerTextFade(true)
+            text:remove()
         end
 		if Game:getFlag("acj_game_win") then
 			cutscene:text("* It appears doing this trial again won't earn you anything else.")
@@ -790,29 +766,17 @@ return {
 		end
 		local text
 
-        local function gonerTextFade(wait)
-            local this_text = text
-            Game.world.timer:tween(1, this_text, { alpha = 0 }, "linear", function()
-                this_text:remove()
-            end)
-            if wait ~= false then
-                cutscene:wait(1)
-            end
-        end
-
-        -- FIXME: actually use skippable
         local function gonerText(str, advance, skippable)
             text = DialogueText("[speed:0.5][spacing:6][voice:none]" .. str, 160, 100, 640, 480,
                 { auto_size = true })
             text.layer = WORLD_LAYERS["textbox"]
-            text.skip_speed = not skippable
             text.parallax_x = 0
             text.parallax_y = 0
             Game.world:addChild(text)
 
             cutscene:wait(function() return not text:isTyping() end)
 			cutscene:wait(function() return Input.pressed("confirm") or Input.down("menu") end)
-            gonerTextFade(true)
+            text:remove()
         end
 		if Game:getFlag("acj_observation_win") then
 			cutscene:text("* It appears doing this trial again won't earn you anything else.")
@@ -1179,12 +1143,23 @@ return {
 		cutscene:showNametag("Jamm")
 		cutscene:text("* ...", "shaded_neutral", "jamm")
 		if Game:getFlag("dungeonkiller") then
+			cutscene:look(jamm, "down")
+			cutscene:look(dess, "up")
+			cutscene:text("* ...Dess.", "shaded_neutral", "jamm")
+			cutscene:text("* Give me one good reason I should even let you live.", "shaded_neutral", "jamm")
+			cutscene:showNametag("Dess")
+			cutscene:text("* I got you through this dungeon,[wait:5] didn't I?", "kind", "dess")
+			cutscene:showNametag("Jamm")
+			cutscene:text("* ...", "shaded_neutral", "jamm")
+			cutscene:text("* It wouldn't even be worth it to kill you now,[wait:5] would it?", "shaded_neutral", "jamm")
+			cutscene:look(jamm, "left")
+			cutscene:text("* The damage is done.", "shaded_neutral", "jamm")
 			cutscene:hideNametag()
 			cutscene:wait(cutscene:walkToSpeed("jamm", "jamm_spawn", 4, "up"))
             Game:getPartyMember("jamm"):setOpinion("dess", 0)
 			Game:getPartyMember("jamm"):removeSpell("supersling")
 			cutscene:showNametag("Dess")
-			cutscene:text("* (What have I done to him...)", "genuine", "dess")
+			cutscene:text("* (I feel terrible about what just happened...)", "genuine", "dess")
 			cutscene:hideNametag()
 			cutscene:wait(cutscene:walkToSpeed("dess", 540, 280, 4))
 			Game.world.map:getEvent(2):remove()
@@ -1368,6 +1343,9 @@ return {
 			cutscene:text("* Jamm and Dess talked for the rest of the night,[wait:5] having fun...")
 			cutscene:text("* (Jamm and Dess learned [color:yellow]JD Batter[color:white]!)")
 		end
+		cutscene:after(function()
+			Game:addEventTime(3)
+		end)
 		Game:setFlag("jamm_closure", true)
 		-- Kristal.callEvent("completeQuest", "acj2")
         Game:getPartyMember("jamm").has_act = false

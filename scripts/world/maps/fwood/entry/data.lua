@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.10.1",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 22,
+  nextobjectid = 23,
   properties = {
     ["border"] = "deoxynn/deep_forest",
     ["music"] = "forgotten_wood",
@@ -320,6 +320,22 @@ return {
           properties = {
             ["inc_flag"] = "binaribeans",
             ["name"] = "Binaribean"
+          }
+        },
+        {
+          id = 22,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 120,
+          y = 720,
+          width = 200,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "tombsite.jamm_dlc",
+            ["once"] = false
           }
         }
       }

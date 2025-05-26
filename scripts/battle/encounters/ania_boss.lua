@@ -27,7 +27,10 @@ function Dummy:init()
     self.flee = false
 
     -- Add the dummy enemy to the encounter
-    self:addEnemy("shade_ania")
+    self.boss = self:addEnemy("shade_ania")
+	
+	self.did_first_checkpoint = false
+	self.did_second_checkpoint = false
 end
 
 function Dummy:onBattleInit()
@@ -73,6 +76,18 @@ function Dummy:getEncounterText()
 		return "* A lethal attack is coming!\n* Brace yourself!"
 	end
 	return super.getEncounterText(self)
+end
+
+function Dummy:beforeStateChange(old, new)
+	if not self.boss_rush and Game:getFlag("jamm_closure") ~= true and new == "ENEMYDIALOGUE" then
+		if (self.boss.health < 1530 or self.boss.mercy > 33) and not self.did_first_checkpoint then
+			self.did_first_checkpoint = true
+			Game.battle:startCutscene("shade_ania.checkpoint_1")
+		elseif (self.boss.health < 760 or self.boss.mercy > 66) and not self.did_second_checkpoint then
+			self.did_second_checkpoint = true
+			Game.battle:startCutscene("shade_ania.checkpoint_2")
+		end
+	end
 end
 
 return Dummy
