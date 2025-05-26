@@ -645,6 +645,7 @@ return {
 			cutscene:after(Game:swapIntoMod("dpr_main", true, "deoxtest", "jamm"))
 		else
 			cutscene:text("* You travelen't.")
+			cutscene:wait(cutscene:walkTo(Game.world.player, Game.world.player.x, Game.world.player.y - 20))
 		end
     end,
 }
