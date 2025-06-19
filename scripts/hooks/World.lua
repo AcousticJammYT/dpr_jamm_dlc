@@ -1,5 +1,5 @@
 ---@class World
-local World, super = Class("World", true)
+local World, super = Class(World)
 
 function World:onKeyPressed(key)
     if Kristal.Config["debug"] and Input.ctrl() then
