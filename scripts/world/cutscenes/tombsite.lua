@@ -58,6 +58,23 @@ return {
 			cutscene:showNametag("Dess")
 			cutscene:text("* uhhh okay", "neutral_c", "dess")
 			cutscene:text("* im gonna go pilfer the diner for roobeer if you wanna join", "condescending", "dess")
+		elseif cutscene:getCharacter("hero") and Game:getPartyMember("hero"):getFlag("karma") <= -15 then
+			cutscene:showNametag("Hero")
+			cutscene:text("* Don't keep your daughter waiting.", "annoyed", "hero")
+			if cutscene:getCharacter("susie") then
+				cutscene:showNametag("Susie")
+				cutscene:text("* Hero,[wait:5] let the man grieve.", "annoyed", "susie")
+				cutscene:text("* But anyways,[wait:5] maybe spending time with your daughter would help?", "neutral", "susie")
+			else
+				cutscene:showNametag("Jamm")
+				cutscene:text("* ...", "shaded_neutral", "jamm")
+				cutscene:text("* Alright,[wait:5] I won't.", "shaded_neutral", "jamm")
+				cutscene:hideNametag()
+				cutscene:text("* You tell Jamm to try to spend some time with Marcy.")
+			end
+		elseif cutscene:getCharacter("susie") then
+			cutscene:showNametag("Susie")
+			cutscene:text("* Maybe spending time with your daughter would help?", "neutral", "susie")
 		else
 			cutscene:hideNametag()
 			cutscene:text("* You tell Jamm to try to spend some time with Marcy.")
