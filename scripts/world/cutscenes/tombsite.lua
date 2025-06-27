@@ -23,7 +23,10 @@ return {
 		cutscene:showNametag("???")
 		cutscene:text("* Oh,[wait:5] Ania...", "shaded_neutral", "jamm")
 		
-		if cutscene:getCharacter("hero") then
+		if Game:isDessMode() then
+			cutscene:showNametag("Dess")
+			cutscene:text("* ermmmm you're jamm right?", "condescending", "dess")
+		elseif cutscene:getCharacter("hero") then
 			cutscene:showNametag("Hero")
 			cutscene:text("* Would you happen to be Jamm?", "neutral_closed", "hero")
 		elseif cutscene:getCharacter("susie") then
@@ -39,7 +42,10 @@ return {
 		cutscene:showNametag("Jamm")
 		cutscene:text("* Yeah,[wait:5] who's asking?", "shaded_neutral", "jamm")
 		
-		if cutscene:getCharacter("susie") then
+		if Game:isDessMode() then
+			cutscene:showNametag("Dess")
+			cutscene:text("* mini-jamm is looking for you", "calm", "dess")
+		elseif cutscene:getCharacter("susie") then
 			cutscene:showNametag("Susie")
 			cutscene:text("* Some kid asked us to find you for her.", "neutral", "susie")
 		elseif cutscene:getCharacter("hero") then
