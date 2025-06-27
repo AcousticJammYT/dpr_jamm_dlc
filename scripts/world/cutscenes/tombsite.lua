@@ -23,7 +23,10 @@ return {
 		cutscene:showNametag("???")
 		cutscene:text("* Oh,[wait:5] Ania...", "shaded_neutral", "jamm")
 		
-		if cutscene:getCharacter("hero") then
+		if Game:isDessMode() then
+			cutscene:showNametag("Dess")
+			cutscene:text("* ermmmm you're jamm right?", "condescending", "dess")
+		elseif cutscene:getCharacter("hero") then
 			cutscene:showNametag("Hero")
 			cutscene:text("* Would you happen to be Jamm?", "neutral_closed", "hero")
 		elseif cutscene:getCharacter("susie") then
@@ -45,6 +48,9 @@ return {
 		elseif cutscene:getCharacter("hero") then
 			cutscene:showNametag("Hero")
 			cutscene:text("* Your daughter wanted us to find you.", "neutral_closed", "hero")
+		elseif Game:isDessMode() or cutscene:getCharacter("dess") then
+			cutscene:showNametag("Dess")
+			cutscene:text("* mini-jamm is looking for you", "calm", "dess")
 		else
 			cutscene:hideNametag()
 			cutscene:text("* You tell Jamm that Marcy sent you to look for him.")
@@ -54,11 +60,7 @@ return {
 		cutscene:text("* Ah,[wait:5] I see...[wait:10]\n* I didn't mean to make her worry...", "shaded_neutral", "jamm")
 		cutscene:text("* I just needed to visit my wife again.", "shaded_neutral", "jamm")
 		
-		if Game:isDessMode() then
-			cutscene:showNametag("Dess")
-			cutscene:text("* uhhh okay", "neutral_c", "dess")
-			cutscene:text("* im gonna go pilfer the diner for roobeer if you wanna join", "condescending", "dess")
-		elseif cutscene:getCharacter("hero") and Game:getPartyMember("hero"):getFlag("karma") <= -15 then
+		if cutscene:getCharacter("hero") and Game:getPartyMember("hero"):getFlag("karma") <= -15 then
 			cutscene:showNametag("Hero")
 			cutscene:text("* Don't keep your daughter waiting.", "annoyed", "hero")
 			if cutscene:getCharacter("susie") then
@@ -75,6 +77,10 @@ return {
 		elseif cutscene:getCharacter("susie") then
 			cutscene:showNametag("Susie")
 			cutscene:text("* Maybe spending time with your daughter would help?", "neutral", "susie")
+		elseif Game:isDessMode() or cutscene:getCharacter("dess") then
+			cutscene:showNametag("Dess")
+			cutscene:text("* uhhh okay", "neutral_c", "dess")
+			cutscene:text("* im gonna go pilfer the diner for roobeer if you wanna join", "condescending", "dess")
 		else
 			cutscene:hideNametag()
 			cutscene:text("* You tell Jamm to try to spend some time with Marcy.")
