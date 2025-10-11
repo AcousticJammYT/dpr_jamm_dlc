@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="70" height="60" tilewidth="40" tileheight="40" infinite="0" nextlayerid="5" nextobjectid="92">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="70" height="60" tilewidth="40" tileheight="40" infinite="0" nextlayerid="5" nextobjectid="92">
  <editorsettings>
   <export target="superstar.lua" format="lua"/>
  </editorsettings>
@@ -155,7 +155,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -164,7 +163,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -173,7 +171,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -182,7 +179,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -191,7 +187,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -200,7 +195,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -209,7 +203,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -218,7 +211,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -227,7 +219,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -236,7 +227,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -245,7 +235,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -254,7 +243,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -263,7 +251,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -272,7 +259,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -281,7 +267,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -290,7 +275,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -299,7 +283,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -308,7 +291,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -317,7 +299,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -326,7 +307,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -335,7 +315,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -344,7 +323,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -353,7 +331,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -362,7 +339,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -371,7 +347,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -380,7 +355,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -389,7 +363,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -398,7 +371,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -407,7 +379,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -416,7 +387,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -425,7 +395,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -434,7 +403,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -443,7 +411,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -452,7 +419,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -461,7 +427,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -470,7 +435,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -479,7 +443,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -488,7 +451,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -497,7 +459,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -506,7 +467,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -515,7 +475,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>
@@ -527,7 +486,6 @@
     <property name="actor" value="shadynn"/>
     <property name="chase" type="bool" value="true"/>
     <property name="encounter" value="shadynn_2"/>
-    <property name="group" value="A"/>
    </properties>
    <point/>
   </object>

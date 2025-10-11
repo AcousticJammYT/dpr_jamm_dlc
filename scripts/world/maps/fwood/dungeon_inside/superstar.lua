@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.0",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -356,8 +356,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -374,8 +373,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -392,8 +390,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -410,8 +407,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -428,8 +424,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -446,8 +441,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -464,8 +458,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -482,8 +475,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -500,8 +492,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -518,8 +509,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -536,8 +526,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -554,8 +543,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -572,8 +560,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -590,8 +577,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -608,8 +594,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -626,8 +611,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -644,8 +628,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -662,8 +645,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -680,8 +662,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -698,8 +679,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -716,8 +696,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -734,8 +713,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -752,8 +730,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -770,8 +747,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -788,8 +764,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -806,8 +781,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -824,8 +798,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -842,8 +815,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -860,8 +832,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -878,8 +849,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -896,8 +866,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -914,8 +883,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -932,8 +900,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -950,8 +917,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -968,8 +934,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -986,8 +951,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -1004,8 +968,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -1022,8 +985,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -1040,8 +1002,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -1058,8 +1019,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -1076,8 +1036,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {
@@ -1107,8 +1066,7 @@ return {
           properties = {
             ["actor"] = "shadynn",
             ["chase"] = true,
-            ["encounter"] = "shadynn_2",
-            ["group"] = "A"
+            ["encounter"] = "shadynn_2"
           }
         },
         {

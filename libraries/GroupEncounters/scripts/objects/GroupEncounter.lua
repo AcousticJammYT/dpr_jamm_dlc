@@ -1,7 +1,7 @@
 local GroupEncounter, super = Class(Encounter)
 
 function GroupEncounter:init()
-    super:init(self)
+    super.init(self)
 
     self.groups = {} -- Storage for all the groups in the fight.
     self.current_group = 0 -- What group are we on? (Minus one)
@@ -25,7 +25,7 @@ function GroupEncounter:beforeStateChange(old, new)
 end
 
 function GroupEncounter:onTurnStart()
-    super:onTurnStart(self)
+    super.onTurnStart(self)
     self:incrementGroupTurn()
 end
 
