@@ -17,6 +17,10 @@ function ArenaHazard:init(x, y, w, h)
 	self:setScale(1)
 end
 
+function ArenaHazard:shouldSwoon()
+    return true
+end
+
 function ArenaHazard:update()
     -- For more complicated bullet behaviours, code here gets called every update
 

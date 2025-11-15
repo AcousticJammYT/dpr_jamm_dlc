@@ -38,7 +38,7 @@ return {
 			cutscene:text("* lettuce continue", "challenging", "dess")
 		end
 		if Game.battle.turn_count == 3 then
-			cutscene:battlerText(enemy, "Alright, enough playing around.", {})
+			cutscene:battlerText(enemy, "Alright, enough\nplaying around.", {})
 		else
 			cutscene:battlerText(enemy, "...", {})
 		end
