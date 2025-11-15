@@ -300,36 +300,22 @@ return {
 		cutscene:hideNametag()
 		
 		cutscene:startEncounter("fake_jamm", false, {{"fake_jamm", fake_jamm}})
-		
-		cutscene:setAnimation(fake_jamm, "attack")
-		cutscene:wait(1/15)
-		
+
 		for i, member in ipairs(members) do
             print(member.actor.id)
-            if member.actor.id == "noel" then
-                noel_null = love.math.random(1, 3)
-                if noel_null == 1 then
-                    Assets.playSound("awkward", 1, 1)
-                    Assets.playSound("voice/noel-#", 2, 1)
-                    cutscene:resetSprite(member)
-                else
-                    noel_hit = 55
-			        cutscene:setAnimation(member, "battle/defeat")
-                end
-            else
-			    cutscene:setAnimation(member, "battle/defeat")
-            end
-            member:shake(10, 10)
+            cutscene:setAnimation(member, "battle/swooned")
 		end
-		Assets.playSound("hurt", 1, 1)
-		
+		for _, member in ipairs(Game.party) do
+			member:setHealth(1)
+		end
+
 		cutscene:wait(1)
 		
 		cutscene:showNametag("Jamm?")
 		cutscene:text("* Pathetic.", "shaded_revealed", "jamm")
 		cutscene:hideNametag()
 
-        if noel_null then
+        --[[if noel_null then -- suppose none of that should happen anymore but I wasn't sure if I should delete this
             if noel_null == 1 then
 		        cutscene:wait(1)
 		        cutscene:showNametag("Noel")
@@ -444,7 +430,7 @@ return {
 				cutscene:showNametag("Jamm?")
 				cutscene:text("* Anyways,[wait:5] as I was saying--", "shaded_revealed", "jamm", {auto = true})
 			end
-        end
+        end]]
 		
 		cutscene:showNametag("???")
 		cutscene:text("* Hold it!", nil, "jamm")

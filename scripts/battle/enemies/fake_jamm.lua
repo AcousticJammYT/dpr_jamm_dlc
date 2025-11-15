@@ -73,4 +73,11 @@ function Dummy:hurt(amount, battler, on_defeat, color)
 	self:checkHealth(on_defeat, amount, battler)
 end
 
+function Dummy:getNextWaves()
+    if Game.battle.turn_count >= 3 then
+        return {"superslashes"}
+    end
+    return super.getNextWaves(self)
+end
+
 return Dummy
