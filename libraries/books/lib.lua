@@ -40,7 +40,7 @@ function lib:preInit()
 end
 
 function lib:loadHooks()
-    Utils.hook(World, "createBookMenu", function(orig, self)
+    HookSystem.hook(World, "createBookMenu", function(orig, self)
         
     end)
 end

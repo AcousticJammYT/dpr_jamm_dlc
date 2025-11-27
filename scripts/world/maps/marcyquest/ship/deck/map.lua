@@ -50,7 +50,7 @@ function Ship:update()
 		self.tidal_timer = self.tidal_timer - 3
 		local ran = love.math.random(0, 120)
 		for i=1, 5 do -- y = 134
-			Game.world.timer:after(Utils.random(2.2), function()
+			Game.world.timer:after(MathUtils.random(2.2), function()
 				if Game.world.map.id == "marcyquest/ship/deck" then
 					local water = Sprite("world/miniwave_1", -20, 134 + ran + (160 * (i-1)))
 					water:setScale(2)
