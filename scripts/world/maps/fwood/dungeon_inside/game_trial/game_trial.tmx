@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.6" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="19">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="19">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -71,12 +71,6 @@
    <point/>
   </object>
   <object id="9" name="entry" x="600" y="300">
-   <point/>
-  </object>
-  <object id="15" name="dess_dungeonkiller" x="240" y="200">
-   <point/>
-  </object>
-  <object id="18" name="jamm_dungeonkiller" x="160" y="280">
    <point/>
   </object>
  </objectgroup>

@@ -148,10 +148,4 @@ function Shadynn:hurt(amount, battler, on_defeat, color)
 	end
 end
 
-function Shadynn:onSpared()
-	super.onSpared(self)
-	
-	Game:setFlag("dungeonkiller", false)
-end
-
 return Shadynn

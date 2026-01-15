@@ -17,17 +17,9 @@ function SmallBullet:update()
 	
 	if self.x <= Game.battle.arena:getLeft() then
 		local angle = MathUtils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y)
-		if Game:getFlag("dungeonkiller") then
-			self.wave:spawnBullet("small_note", self.x, self.y, angle, 6)
-			self.wave:spawnBullet("small_note", self.x, self.y, angle + math.rad(40), 6)
-			self.wave:spawnBullet("small_note", self.x, self.y, angle - math.rad(40), 6)
-			self.wave:spawnBullet("small_note", self.x, self.y, angle + math.rad(80), 6)
-			self.wave:spawnBullet("small_note", self.x, self.y, angle - math.rad(80), 6)
-		else
-			self.wave:spawnBullet("small_note", self.x, self.y, angle, 6)
-			self.wave:spawnBullet("small_note", self.x, self.y, angle + math.rad(45), 6)
-			self.wave:spawnBullet("small_note", self.x, self.y, angle - math.rad(45), 6)
-		end
+		self.wave:spawnBullet("small_note", self.x, self.y, angle, 6)
+		self.wave:spawnBullet("small_note", self.x, self.y, angle + math.rad(45), 6)
+		self.wave:spawnBullet("small_note", self.x, self.y, angle - math.rad(45), 6)
 		Assets.playSound("sing")
 		self:remove()
 	end
