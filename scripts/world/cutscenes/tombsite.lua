@@ -352,84 +352,6 @@ return {
 			cutscene:showNametag("Jamm?")
 			cutscene:text("* Anyways,[wait:5] as I was saying--", "shaded_revealed", "jamm", {auto = true})
 		end
-
-        --[[if noel_null then -- suppose none of that should happen anymore but I wasn't sure if I should delete this
-            if noel_null == 1 then
-		        cutscene:wait(1)
-		        cutscene:showNametag("Noel")
-
-                cutscene:text("* Wait, where did everybody go???", "...", "noel")
-		        cutscene:hideNametag()
-		        cutscene:wait(1)
-
-		        cutscene:showNametag("Jamm?")
-
-		        cutscene:text("[speed:0.1]* ...", "shaded_neutral", "jamm")
-		        cutscene:hideNametag()
-		        cutscene:setAnimation(fake_jamm, "attack")
-		        cutscene:wait(1/15)
-                local noel_null = love.math.random(1, 3)
-
-                noel:shake(10, 10)
-
-                if noel_null == 1 then
-                    Assets.playSound("awkward", 1, 1)
-                    Assets.playSound("voice/noel-#", 2, 1)
-			        cutscene:setSprite(noel, "walk/right_1")
-		            cutscene:wait(2)
-		            cutscene:showNametag("Noel")
-                    cutscene:text("* Oh...[wait:5] [face:...]Wait, [face:bruh]what?", "neutral", "noel", {auto = true})
-		            cutscene:hideNametag()
-		            for i = 1, 3 do
-
-                        noel:shake(10, 10)
-
-    		            local noel_null = love.math.random(1, 2)
-
-    		            if noel_null == 1 then
-    		                cutscene:setAnimation(fake_jamm, "attack")
-                            Assets.playSound("awkward", 1, 1)
-                            Assets.playSound("voice/noel-#", 2, 1)
-                        else
-    		                cutscene:setAnimation(fake_jamm, "attack")
-                            Assets.playSound("voice/noel-#", 2, 1)
-                            cutscene:setAnimation(noel, "battle/defeat")
-                            noel_hit = 55
-                            break
-   		                end
-                        cutscene:wait(1/2)
-		            end
-                    if noel_hit == 55 then
-						cutscene:showNametag("Jamm?")
-						cutscene:text("* Stay down.", "shaded_neutral", "jamm")
-						cutscene:text("* Well,[wait:5] it's time to--", "shaded_revealed", "jamm", {auto = true})
-					else
-						cutscene:showNametag("Noel")
-						cutscene:text("* HEY!", "madloud", "noel", {auto = true})
-						cutscene:hideNametag()
-						Game.world.music:fade(0, 0.25)
-						cutscene:wait(1)
-						local wobblything = Music("wobblything_loop", 1.5, 1)
-						cutscene:wait(cutscene:walkToSpeed(noel, 230, 260, 0.5, "right"))
-						wobblything:stop()
-						Game.world.music:fade(1, 0.5)
-						cutscene:showNametag("Noel")
-						cutscene:text("* You missed [color:yellow]dumbass[color:white].", "bruh", "noel")
-						cutscene:text("* What kind of construction worker are you?", "huh", "noel")
-
-						cutscene:showNametag("Jamm?")
-						cutscene:text("* Why won't you--", "shaded_desperate", "jamm", {auto = true})
-					end
-				else
-					noel:shake(10, 10)
-					Assets.playSound("voice/noel-#", 2, 1)
-					cutscene:setAnimation(noel, "battle/defeat")
-					noel_hit = 55
-					cutscene:wait(1)
-					cutscene:text("* Well,[wait:5] it's time to--", "shaded_revealed", "jamm", {auto = true})
-				end
-			end
-        end]]
 		
 		cutscene:showNametag("???")
 		cutscene:text("* Hold it!", nil, "jamm")
@@ -439,7 +361,7 @@ return {
 		
 		cutscene:showNametag("Jamm")
 		cutscene:text("* Well,[wait:5] Enzio.[wait:10]\n* Never thought you'd stoop this low.", "smirk", "jamm")
-		cutscene:text("* Stealing my Guilded account,[wait:5] sure.[wait:10]\n* But impersonation?", "smirk", "jamm")
+		cutscene:text("* Stealing my Root account,[wait:5] sure.[wait:10]\n* But impersonation?", "smirk", "jamm")
 		
         if noel_null then
             if not noel_hit == 55 then
