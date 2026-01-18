@@ -301,14 +301,6 @@ return {
 		
 		cutscene:startEncounter("fake_jamm", false, {{"fake_jamm", fake_jamm}})
 
-		for i, member in ipairs(members) do
-            print(member.actor.id)
-            cutscene:setAnimation(member, "battle/swooned")
-		end
-		for _, member in ipairs(Game.party) do
-			member:setHealth(1)
-		end
-
 		cutscene:wait(1)
 		
 		cutscene:showNametag("Jamm?")
