@@ -21,6 +21,8 @@ function Dummy:init()
     self.money = 100
     self.experience = 5
 	self.service_mercy = 0
+
+    self.exit_on_defeat = false
 	
 	self.boss = true
 	
