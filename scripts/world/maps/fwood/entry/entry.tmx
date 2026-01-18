@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="18" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="23">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="18" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="23">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -98,6 +98,10 @@
   </object>
   <object id="16" name="beanspot" x="400" y="320">
    <properties>
+    <property name="bean_col" type="color" value="#ffffffff"/>
+    <property name="bean_spr" value="world/events/beans/binaribean"/>
+    <property name="bean_starspr" value="world/events/beans/star_binari"/>
+    <property name="color" type="color" value="#ff1c387f"/>
     <property name="inc_flag" value="binaribeans"/>
     <property name="name" value="Binaribean"/>
    </properties>
@@ -105,6 +109,10 @@
   </object>
   <object id="17" name="beanspot" x="240" y="240">
    <properties>
+    <property name="bean_col" type="color" value="#ffffffff"/>
+    <property name="bean_spr" value="world/events/beans/binaribean"/>
+    <property name="bean_starspr" value="world/events/beans/star_binari"/>
+    <property name="color" type="color" value="#ff1c387f"/>
     <property name="inc_flag" value="binaribeans"/>
     <property name="name" value="Binaribean"/>
    </properties>
