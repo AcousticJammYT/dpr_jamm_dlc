@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -339,6 +339,10 @@ return {
           rotation = 0,
           visible = true,
           properties = {
+            ["bean_col"] = "#ffffffff",
+            ["bean_spr"] = "world/events/beans/binaribean",
+            ["bean_starspr"] = "world/events/beans/star_binari",
+            ["color"] = "#ff1c387f",
             ["inc_flag"] = "binaribeans",
             ["name"] = "Binaribean"
           }
@@ -355,6 +359,10 @@ return {
           rotation = 0,
           visible = true,
           properties = {
+            ["bean_col"] = "#ffffffff",
+            ["bean_spr"] = "world/events/beans/binaribean",
+            ["bean_starspr"] = "world/events/beans/star_binari",
+            ["color"] = "#ff1c387f",
             ["inc_flag"] = "binaribeans",
             ["name"] = "Binaribean"
           }
@@ -371,6 +379,10 @@ return {
           rotation = 0,
           visible = true,
           properties = {
+            ["bean_col"] = "#ffffffff",
+            ["bean_spr"] = "world/events/beans/binaribean",
+            ["bean_starspr"] = "world/events/beans/star_binari",
+            ["color"] = "#ff1c387f",
             ["inc_flag"] = "binaribeans",
             ["name"] = "Binaribean"
           }
